@@ -9,12 +9,14 @@ import { NbThemeService } from '@nebular/theme';
   styleUrls: ['./normal.component.scss']
 })
 export class NormalComponent implements OnInit {
- constructor(
-  private themeService: NbThemeService
- ){}
+  constructor(
+    private themeService: NbThemeService
+  ) {
+    this.enableDarkTheme();
+  }
 
   ngOnInit() {
-    this.enableDarkTheme();
+
   }
   enableDarkTheme() {
     this.themeService.changeTheme('dark');

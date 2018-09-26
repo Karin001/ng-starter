@@ -1,26 +1,14 @@
 import { NgModule } from '@angular/core';
-import {
-  MatToolbarModule,
-  MatSidenavModule,
-  MatButtonModule,
-  MatIconModule,
-  MatCardModule,
-  MatFormFieldModule,
-  MatInputModule,
-} from '@angular/material';
+
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { NbLayoutModule, NbSidebarModule } from '@nebular/theme';
 const SHARED = [
   RouterModule,
   HttpClientModule,
-  MatToolbarModule,
-  MatSidenavModule,
-  MatButtonModule,
-  MatIconModule,
-  MatCardModule,
-  MatFormFieldModule,
-  MatInputModule
-]
+  NbLayoutModule,
+    NbSidebarModule,
+];
 @NgModule({
   imports: SHARED,
   declarations: [],

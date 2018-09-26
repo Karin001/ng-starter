@@ -1,0 +1,11 @@
+:host ::ng-deep{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    mat-toolbar{
+        position: fixed;
+        bottom: 0;
+    }
+}

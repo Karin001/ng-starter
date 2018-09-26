@@ -1,0 +1,10 @@
+<mat-sidenav-container class="container">
+  <mat-sidenav #sidenav mode="over" opened="false" class="example-sidenav"
+  [fixedInViewport]="options.fixed" [fixedTopGap]="options.top"
+  [fixedBottomGap]="options.bottom">
+{{options.fixed ? 'Fixed' : 'Non-fixed'}} Sidenav
+</mat-sidenav>
+  <mat-sidenav-content>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

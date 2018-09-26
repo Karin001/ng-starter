@@ -1,0 +1,15 @@
+:host ::ng-deep{
+   
+    mat-drawer-container.container{
+        flex:1;
+    }
+    mat-drawer{
+       
+        max-width:100px; 
+      
+    }
+    
+    mat-drawer-content{
+     
+    }
+}

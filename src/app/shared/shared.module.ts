@@ -2,12 +2,21 @@ import { NgModule } from '@angular/core';
 
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { NbLayoutModule, NbSidebarModule } from '@nebular/theme';
+import { NbLayoutModule, NbSidebarModule, NbActionsModule, NbUserModule, NbMenuModule, NbContextMenuModule, NbInputModule, NbAlertModule, NbCheckboxModule } from '@nebular/theme';
+import { FormsModule } from '@angular/forms';
 const SHARED = [
   RouterModule,
   HttpClientModule,
+  FormsModule,
   NbLayoutModule,
     NbSidebarModule,
+    NbActionsModule,
+    NbUserModule,
+    NbMenuModule,
+    NbContextMenuModule,
+    NbInputModule,
+    NbAlertModule,
+    NbCheckboxModule
 ];
 @NgModule({
   imports: SHARED,

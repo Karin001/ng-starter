@@ -1,10 +1,33 @@
+<nb-layout>
+  <nb-layout-header fixed>
 
-   <nb-layout>
-    <nb-layout-header fixed>Company Name</nb-layout-header>
+    <a href="#"><i class="nb-menu" (click)="toggle()"></i></a>
+    Company Name
+    <!-- <nb-actions>
+      <nb-action icon="nb-home"></nb-action>
+      <nb-action icon="nb-search"></nb-action>
+    </nb-actions> -->
+    <nb-user size="middle"
+    [onlyPicture]="avatarOnlyPicture"
+    name="Jonh Doe"
+    title="Engineer"
+    badgeText="99+"
+    badgeStatus="success"
+    badgePosition="top right"
+    nbContextMenuPlacement ="left"
+    [nbContextMenu]="menu"
+    nbContextMenuTag="my-context-menu">
+</nb-user>
 
-    <nb-sidebar>Sidebar Content</nb-sidebar>
 
-    <nb-layout-column>Page Content</nb-layout-column>
-  </nb-layout>
+  </nb-layout-header>
 
+  <nb-sidebar>
+      
+  </nb-sidebar>
 
+  <nb-layout-column>
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+
+</nb-layout>

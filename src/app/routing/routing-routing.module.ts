@@ -4,7 +4,14 @@ import { NormalComponent } from '../layout/normal/normal.component';
 import { DefaultComponent } from './default/default.component';
 import { PassportComponent } from '../layout/passport/passport.component';
 import { LoginComponent } from './passport/login/login.component';
-
+import {
+  NbAuthComponent,
+  NbLoginComponent,
+  NbRegisterComponent,
+  NbLogoutComponent,
+  NbRequestPasswordComponent,
+  NbResetPasswordComponent,
+} from '@nebular/auth'
 const routes: Routes = [
   {
     path: '', 
@@ -14,12 +21,35 @@ const routes: Routes = [
     ]
   },
   {
-    path:'passport',
-    component: PassportComponent,
-    children:[
-      {path:'login', component:LoginComponent}
-    ]
-  }
+    path: 'auth',
+    component: NbAuthComponent,
+    children: [
+      {
+        path: '',
+        component: LoginComponent,
+      },
+      {
+        path: 'login',
+        component: LoginComponent,
+      },
+      {
+        path: 'register',
+        component: NbRegisterComponent,
+      },
+      {
+        path: 'logout',
+        component: NbLogoutComponent,
+      },
+      {
+        path: 'request-password',
+        component: NbRequestPasswordComponent,
+      },
+      {
+        path: 'reset-password',
+        component: NbResetPasswordComponent,
+      },
+    ],
+  },
 ];
  
 @NgModule({

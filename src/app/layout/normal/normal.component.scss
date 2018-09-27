@@ -1,5 +1,13 @@
 
 :host ::ng-deep{
-
-
+    a{
+        text-decoration: none;
+    }
+    .nb-menu{
+        font-size: 2rem;
+   
+    }
+    nb-user{
+        margin-left: auto;
+    }
 }

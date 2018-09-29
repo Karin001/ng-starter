@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {filter, map, tap} from 'rxjs/operators';
-import { ThemeChangeService } from '../../core/ui/themeChange.service';
-import { OverlayContainer } from '@angular/cdk/overlay';
 import { NbThemeService, NbSidebarService, NbMenuService } from '@nebular/theme';
+import { NbAuthJWTToken, NbAuthService } from '@nebular/auth';
 const menu_logged = [
   {
     title: 'Change Avatar',
@@ -35,13 +34,23 @@ const menu_unlogged = [
 export class NormalComponent implements OnInit {
   avatarOnlyPicture:boolean = false;
   menu = menu_unlogged;
- 
+  user
   constructor(
     private themeService: NbThemeService,
     private sidebarService: NbSidebarService,
-    private nbMenuService: NbMenuService
+    private nbMenuService: NbMenuService,
+    private authService: NbAuthService
   ) {
     this.enableDarkTheme();
+    this.authService.onTokenChange()
+      .subscribe((token: NbAuthJWTToken) => {
+
+        if (token.isValid()) {
+          this.user = token.getPayload(); // here we receive a payload from the token and assigne it to our `user` variable 
+          console.log(this.user)
+        }
+
+      })
   }
   
   ngOnInit() {

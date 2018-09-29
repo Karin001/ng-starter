@@ -26,11 +26,11 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: LoginComponent,
+        component: NbLoginComponent,
       },
       {
         path: 'login',
-        component: LoginComponent,
+        component: NbLoginComponent,
       },
       {
         path: 'register',

@@ -6,7 +6,9 @@ import { LayoutModule } from '../layout/layout.module';
 import { DefaultComponent } from './default/default.component';
 import { LoginComponent } from './passport/login/login.component';
 import { SharedModule } from '../shared/shared.module';
-import { NbAuthModule, NbPasswordAuthStrategy } from '@nebular/auth';
+import { NbAuthModule, NbPasswordAuthStrategy, NbAuthJWTToken, NbAuthSimpleToken, NbPasswordAuthStrategyOptions } from '@nebular/auth';
+import { HttpErrorResponse } from '@angular/common/http';
+import { getDeepFromObject } from '@nebular/auth/helpers';
 
 
 @NgModule({
@@ -19,31 +21,77 @@ import { NbAuthModule, NbPasswordAuthStrategy } from '@nebular/auth';
       strategies: [
         NbPasswordAuthStrategy.setup({
           name: 'email',
-          baseEndpoint: 'http://example.com/app-api/v1',
+          token: { class: NbAuthJWTToken, key: 'token' },
+          baseEndpoint: '',
           login: {
-            endpoint: '/auth/sign-in',
+            // ...
+            endpoint: '/api/users/login',
             method: 'post',
-            defaultErrors: ['哈哈哈'],
           },
           register: {
-            endpoint: '/auth/sign-up',
-            method: 'post',
-          },
-          logout: {
-            endpoint: '/auth/sign-out',
+            // ...
+            endpoint: '/api/users/signup',
             method: 'post',
           },
           requestPass: {
-            endpoint: '/auth/request-pass',
+            endpoint: '/api/users/request-password',
             method: 'post',
           },
-          resetPass: {
-            endpoint: '/auth/reset-pass',
-            method: 'post',
-          },
-        }),
+          errors:{
+            key:"errorInfo",
+            getter: (module: string, res: HttpErrorResponse, options: NbPasswordAuthStrategyOptions) => getDeepFromObject(
+              res.error,
+               options.errors.key,
+               options[module].defaultErrors,
+            ),
+          }
+        })
       ],
-      forms: {},
+      forms: {
+        login: {
+          redirectDelay: 500, // delay before redirect after a successful login, while success message is shown to the user
+          strategy: 'email',  // strategy id key.
+          rememberMe: true,   // whether to show or not the `rememberMe` checkbox
+          showMessages: {     // show/not show success/error messages
+            success: true,
+            error: true,
+          },
+
+        },
+        register: {
+          redirectDelay: 500,
+          strategy: 'email',
+          showMessages: {
+            success: true,
+            error: true,
+          },
+          terms: true,
+
+        },
+        requestPassword: {
+          redirectDelay: 5000,
+          strategy: 'email',
+          showMessages: {
+            success: true,
+            error: true,
+          },
+        },
+        validation: {
+          password: {
+            required: true,
+            minLength: 4,
+            maxLength: 50,
+          },
+          email: {
+            required: true,
+          },
+          fullName: {
+            required: false,
+            minLength: 4,
+            maxLength: 50,
+          },
+        },
+      },
     }),
   ],
   declarations: [DefaultComponent, LoginComponent]

@@ -12,6 +12,7 @@ import {
   NbRequestPasswordComponent,
   NbResetPasswordComponent,
 } from '@nebular/auth'
+import { ToResetPasswordComponent } from './passport/to-reset-password/to-reset-password.component';
 const routes: Routes = [
   {
     path: '', 
@@ -26,7 +27,8 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: NbLoginComponent,
+        redirectTo:'/auth/login',
+        pathMatch:'full'
       },
       {
         path: 'login',
@@ -43,6 +45,10 @@ const routes: Routes = [
       {
         path: 'request-password',
         component: NbRequestPasswordComponent,
+      },
+      {
+        path: 'to-reset-password/:token',
+        component: ToResetPasswordComponent,
       },
       {
         path: 'reset-password',

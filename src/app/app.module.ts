@@ -9,6 +9,8 @@ import { LayoutModule } from './layout/layout.module';
 import { RoutingModule } from './routing/routing.module';
 import { CoreModule } from './core/core.module';
 import { NbMenuInternalService } from '@nebular/theme/components/menu/menu.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NbAuthJWTInterceptor } from '@nebular/auth';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,7 @@ import { NbMenuInternalService } from '@nebular/theme/components/menu/menu.servi
     SharedModule
   ],
 
-  providers: [NbSidebarService,NbMenuService],
+  providers: [NbSidebarService, NbMenuService, {provide: HTTP_INTERCEPTORS, useClass: NbAuthJWTInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

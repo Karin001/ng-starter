@@ -1,11 +1,13 @@
-@import '~@nebular/theme/styles/global/bootstrap/breakpoints';
+@import '~include-media/dist/_include-media';
 
 :host {
-  $auth-layout-padding: .5rem;
+  $auth-layout-padding: 2.5rem;
 
   nb-card {
     margin: 0;
     height: calc(100vh - 2 * #{$auth-layout-padding});
+    display: flex;
+    flex-direction: column;
   }
 
   .navigation .link {
@@ -20,6 +22,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    flex:1;
   }
 
   nb-auth-block {
@@ -30,6 +33,9 @@
 
   /deep/ {
     nb-layout .layout .layout-container .content .columns nb-layout-column {
+      @include media("<tablet") {
+        padding: 0
+      }
       padding: $auth-layout-padding;
 
 

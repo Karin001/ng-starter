@@ -1,4 +1,23 @@
+@import '../../../../themes';
 :host ::ng-deep{
-  flex:1;
-  padding-top:3000px;
+  .title{
+    font-size: 2rem;
+  }
+  .sub-title{
+    font-size:1rem;
+  }
+  display: flex;
+  flex-direction: column;
+  form{
+    .form-control-group{
+      .label, .error-message{
+        font-size: .9rem;
+      }
+    }
+    button{
+      background: nb-theme(color-bg) !important;
+      color:black;
+      width: 100%;
+    }
+  }
 }

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { NbLayoutModule, NbSidebarModule, NbActionsModule, NbUserModule, NbMenuModule, NbContextMenuModule, NbInputModule, NbAlertModule, NbCheckboxModule, NbCardModule } from '@nebular/theme';
+import { NbLayoutModule, NbSidebarModule, NbActionsModule, NbUserModule, NbMenuModule, NbContextMenuModule, NbInputModule, NbAlertModule, NbCheckboxModule, NbCardModule, NbSpinnerModule } from '@nebular/theme';
 import { FormsModule } from '@angular/forms';
 const SHARED = [
   RouterModule,
@@ -17,7 +17,8 @@ const SHARED = [
     NbInputModule,
     NbAlertModule,
     NbCheckboxModule,
-    NbCardModule
+    NbCardModule,
+    NbSpinnerModule,
 ];
 @NgModule({
   imports: SHARED,

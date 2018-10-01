@@ -1,13 +1,27 @@
-
+@import '~include-media/dist/_include-media';
 :host ::ng-deep{
     a{
         text-decoration: none;
     }
     .nb-menu{
         font-size: 2rem;
-   
+
     }
     nb-user{
         margin-left: auto;
+        padding-right: .5rem;
+
+    }
+    .nb-badge.left {
+      left: 18px !important;
+    }
+    .nb-badge.top {
+      top: -10px !important;
+    }
+    .menu-title{
+      padding:.3rem 1rem !important;
+    }
+    .menu-items{
+      padding: 0 !important;
     }
 }

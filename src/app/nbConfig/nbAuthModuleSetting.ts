@@ -18,17 +18,21 @@ export const nbAuthModuleSetting =  {
           endpoint: '/api/users/signup',
           method: 'post',
         },
+        logout: {
+          endpoint: '/api/users/logout',
+          method: 'delete',
+        },
         requestPass: {
           endpoint: '/api/users/request-password',
           method: 'post',
-          
+
         },
         resetPass: {
           endpoint: '/api/users/reset-password',
           method: 'post',
         },
-        errors:{
-          key:"errorInfo",
+        errors: {
+          key: 'errorInfo',
           getter: (module: string, res: HttpErrorResponse, options: NbPasswordAuthStrategyOptions) => getDeepFromObject(
             res.error,
              options.errors.key,
@@ -58,6 +62,7 @@ export const nbAuthModuleSetting =  {
         terms: true,
 
       },
+
       requestPassword: {
         redirectDelay: 5000,
         strategy: 'email',

@@ -9,11 +9,11 @@
     </nb-actions> -->
     <nb-user size="middle"
     [onlyPicture]="avatarOnlyPicture"
-    [name]="user?.name"
-    title="Engineer"
+    [name]="user?.name || '访客'"
+    [title]="user?.name?'已登录':'点击登录 获得更多权限'"
     badgeText="99+"
     badgeStatus="success"
-    badgePosition="top right"
+    badgePosition="top left"
     nbContextMenuPlacement ="left"
     [nbContextMenu]="menu"
     nbContextMenuTag="my-context-menu">
@@ -22,8 +22,8 @@
 
   </nb-layout-header>
 
-  <nb-sidebar>
-      
+  <nb-sidebar [fixed]="sidebarFixed">
+
   </nb-sidebar>
 
   <nb-layout-column>

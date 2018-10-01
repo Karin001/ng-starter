@@ -10,7 +10,8 @@ import { AuthComponent } from './passport/auth.component';
 import { RegisterComponent } from './passport/register/register.component';
 import { LogoutComponent } from './passport/logout/logout.component';
 import { RequestPasswordComponent } from './passport/request-password/request-password.component';
-import { NbResetPasswordComponent } from '@nebular/auth';
+import { NbResetPasswordComponent, NbLoginComponent } from '@nebular/auth';
+import { ResetPasswordComponent } from './passport/reset-password/reset-password.component';
 const routes: Routes = [
   {
     path: '',
@@ -50,7 +51,7 @@ const routes: Routes = [
       },
       {
         path: 'reset-password',
-        component: NbResetPasswordComponent,
+        component: ResetPasswordComponent,
       },
     ],
   },

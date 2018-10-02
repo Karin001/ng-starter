@@ -1,15 +1,14 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
-import { MenuToggleService } from './ui/menuToggle.service';
 import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { loadIconSvg } from '../utils/loadIconSvg';
-import { ThemeChangeService } from './ui/themeChange.service';
+import { BlogViewService } from './blog/blog-view.service';
 
 
 @NgModule({
-  providers:[MenuToggleService,ThemeChangeService]
+  providers:[BlogViewService]
 })
-export class CoreModule { 
+export class CoreModule {
   constructor(
   @Optional() @SkipSelf() parentModule: CoreModule,
   private iconRegistry: MatIconRegistry,

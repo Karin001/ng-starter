@@ -17,7 +17,11 @@ const routes: Routes = [
     path: '',
     component: NormalComponent,
     children: [
-      {path:'',component:DefaultComponent}
+      { path: '', component: DefaultComponent },
+      {
+        path: 'blog',
+        loadChildren: './blog/blog.module#BlogModule'
+      }
     ]
   },
   {
@@ -26,8 +30,8 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo:'/auth/login',
-        pathMatch:'full'
+        redirectTo: '/auth/login',
+        pathMatch: 'full'
       },
       {
         path: 'login',
@@ -55,6 +59,7 @@ const routes: Routes = [
       },
     ],
   },
+
 ];
 
 @NgModule({

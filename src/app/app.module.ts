@@ -9,8 +9,10 @@ import { LayoutModule } from './layout/layout.module';
 import { RoutingModule } from './routing/routing.module';
 import { CoreModule } from './core/core.module';
 import { NbMenuInternalService } from '@nebular/theme/components/menu/menu.service';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { NbAuthJWTInterceptor } from '@nebular/auth';
+import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
+import { AngularMarkdownEditorModule } from 'angular-markdown-editor';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,20 @@ import { NbAuthJWTInterceptor } from '@nebular/auth';
     LayoutModule,
     NbThemeModule.forRoot({ name: 'default' }),
     NbMenuModule.forRoot(),
+    AngularMarkdownEditorModule.forRoot({ iconlibrary: 'fa' }),
+    MarkdownModule.forRoot({ loader: HttpClient,
+      markedOptions: {
+        provide: MarkedOptions,
+        useValue: {
+          gfm: true,
+          tables: true,
+          breaks: false,
+          pedantic: false,
+          sanitize: false,
+          smartLists: true,
+          smartypants: false,
+        },
+      }, }),
     SharedModule
   ],
 

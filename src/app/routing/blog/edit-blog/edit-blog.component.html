@@ -1,0 +1,10 @@
+<angular-markdown-editor
+  textareaId="editor1" rows="30"
+  name="markdownText" [(ngModel)]="markdownText"
+  [options]="editorOptions"
+ >
+</angular-markdown-editor>
+<p>
+  {{markdownText}}
+</p>
+<button  (click)="showFullScreen()">写好上传</button>

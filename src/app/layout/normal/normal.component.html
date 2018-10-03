@@ -7,7 +7,6 @@
       <nb-action icon="nb-home"></nb-action>
       <nb-action icon="nb-search"></nb-action>
     </nb-actions> -->
-    <nb-search type="rotate-layout"></nb-search>
     <nb-user size="middle"
     [onlyPicture]="avatarOnlyPicture"
     [name]="user?.name || '访客'"
@@ -21,8 +20,15 @@
   </nb-layout-header>
 
   <nb-sidebar [fixed]="sidebarFixed"  [state]="sidebarState">
-    <nb-menu [items]="items" >
-    </nb-menu>
+    <!-- <nb-menu [items]="items" >
+    </nb-menu> -->
+    <ul>
+        <li><a [routerLink]="['/blog/list/skill']">技术博客</a></li>
+        <li><a [routerLink]="['/blog/list/seikats']">Entertainment</a></li>
+        <li><a [routerLink]="['/blog/list/hoka']">ほかのもの</a></li>
+        <li><a [routerLink]="['/blog/list/skill']">作品</a></li>
+        <li><a [routerLink]="['/blog/edit-blog']">写博客</a></li>
+      </ul>
   </nb-sidebar>
 
   <nb-layout-column>

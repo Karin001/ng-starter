@@ -7,8 +7,8 @@
     [threshold]="500"
 
     >
-    <nb-list-item>
-      <a [routerLink]="['/blog/detail']">name</a>
+    <nb-list-item *ngFor="let item of bloglist">
+      <a [routerLink]="['/blog/detail']">{{item.filename}}</a>
     </nb-list-item>
 
   </nb-list>

@@ -1,10 +1,25 @@
 <angular-markdown-editor
   textareaId="editor1" rows="30"
-  name="markdownText" [(ngModel)]="markdownText"
+  name="markdownText" [(ngModel)]="form.content"
   [options]="editorOptions"
  >
 </angular-markdown-editor>
-<p>
-  {{markdownText}}
-</p>
-<button  (click)="showFullScreen()">写好上传</button>
+<button nbButton (click)="upLoad(dialog)" [disabled]="!form.content">写好上传</button>
+<ng-template #dialog let-data let-ref="dialogRef">
+  <nb-card  [style.width]="'40vw'" [style.height]="'50vh'" >
+    <nb-card-header>message</nb-card-header>
+    <nb-card-body class="card-body">
+      <input [(ngModel)]="form.filename" type="text" nbInput fullWidth status="info" required placeholder="文档名称" #filename="ngModel">
+      <nb-select [(ngModel)]="form.dir" placeholder="上传目录" outline status="info" required #dir="ngModel">
+        <nb-option value="skill">技术博客</nb-option>
+        <nb-option value="seikats">生活博客</nb-option>
+        <nb-option value="hoka">其他</nb-option>
+      </nb-select>
+      <textarea [(ngModel)]="form.description" nbInput fullWidth placeholder="简要描述" required #description="ngModel"></textarea>
+    </nb-card-body>
+    <nb-card-footer>
+      <button nbButton (click)="ref.close()">取消</button>
+      <button nbButton [disabled]="!dir.valid || !filename.valid || !description.valid" (click)="confim();ref.close()">确定</button>
+    </nb-card-footer>
+  </nb-card>
+</ng-template>

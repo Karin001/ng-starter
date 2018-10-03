@@ -1,6 +1,6 @@
 {
     "/api": {
-      "target": "https://yu-mdfile.oss-cn-hangzhou.aliyuncs.com",
+      "target": "http://127.0.0.1:3000",
       "secure": false
     }
   }

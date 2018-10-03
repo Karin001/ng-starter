@@ -8,12 +8,14 @@ import { MarkdownModule } from 'ngx-markdown';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { AngularMarkdownEditorModule } from 'angular-markdown-editor';
 import { EditBlogComponent } from './edit-blog/edit-blog.component';
+import { NbDialogModule } from '@nebular/theme';
 @NgModule({
   imports: [
     CommonModule,
     BlogRoutingModule,
     SharedModule,
     AngularMarkdownEditorModule,
+    NbDialogModule.forChild({ autoFocus: false }),
     MarkdownModule.forChild(),
   ],
   declarations: [BlogListComponent, BlogDetailComponent, EditBlogComponent]

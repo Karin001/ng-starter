@@ -4,9 +4,10 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://127.0.0.1:4200/api',
+  baseUrl: '',
   restApi: {
-    loadBlogList: '/bloglist'
+    loadBlogList: '/api/blog/bloglist',
+    uploadBlog: '/api/blog/uploadBlog'
   }
 };
 

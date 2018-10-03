@@ -5,8 +5,10 @@ import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { EditBlogComponent } from './edit-blog/edit-blog.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'list/angu', pathMatch: 'full' },
-  { path: 'list/:index', component: BlogListComponent },
+  { path: '', redirectTo: 'list/skill', pathMatch: 'full' },
+  { path: 'list/skill', component: BlogListComponent },
+  { path: 'list/hoka', component: BlogListComponent },
+  { path: 'list/seikats', component: BlogListComponent },
   { path: 'detail', component: BlogDetailComponent },
   { path: 'edit-blog', component: EditBlogComponent },
 ];

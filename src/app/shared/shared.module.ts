@@ -17,7 +17,8 @@ import {
   NbSpinnerModule,
   NbSearchModule,
   NbInfiniteListDirective,
-  NbListModule
+  NbListModule,
+  NbSelectModule,
 } from '@nebular/theme';
 import { FormsModule } from '@angular/forms';
 const SHARED = [
@@ -36,7 +37,9 @@ const SHARED = [
   NbCardModule,
   NbSpinnerModule,
   NbSearchModule,
-  NbListModule
+  NbListModule,
+  NbSelectModule,
+  FormsModule
 ];
 @NgModule({
   imports: SHARED,

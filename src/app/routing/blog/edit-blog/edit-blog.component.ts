@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { EditorInstance } from 'angular-markdown-editor';
+import { NbDialogService, NbDialogRef } from '@nebular/theme';
+import { UploadBlogService, UploadBlogReqBodyModel } from '../../../core/blog/upload-blog-service';
 
 @Component({
   selector: 'app-edit-blog',
@@ -7,11 +9,18 @@ import { EditorInstance } from 'angular-markdown-editor';
   styleUrls: ['./edit-blog.component.scss']
 })
 export class EditBlogComponent implements OnInit {
-  markdownText;
+  [x: string]: any;
+  form = {
+    filename: null,
+    content: null,
+    dir: null,
+    description: null
+  };
   bsEditorInstance: EditorInstance;
   editorOptions: { iconlibrary: string; onShow: (e: any) => any; };
   constructor(
-
+    private dialogService: NbDialogService,
+    private upLoadBlogService: UploadBlogService
   ) { }
 
   ngOnInit() {
@@ -23,6 +32,21 @@ export class EditBlogComponent implements OnInit {
   }
   showFullScreen() {
     console.log(this.bsEditorInstance.getContent());
+  }
+  upLoad(dialog: TemplateRef<any>) {
+
+    this.dialogService.open(dialog, { context: 'this is some additional data passed to dialog' });
+  }
+  confim() {
+    console.log(this.bsEditorInstance.getContent());
+    const reqBody: UploadBlogReqBodyModel = {
+      ...this.form,
+    };
+    console.log(reqBody.content);
+    this.upLoadBlogService.uploadBlog(reqBody).subscribe(resBody => {
+      console.log(resBody);
+    });
+
   }
 
 }

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NbThemeModule, NbSidebarService, NbMenuService, NbMenuModule } from '@nebular/theme';
+import { NbThemeModule, NbSidebarService, NbMenuService, NbMenuModule, NbDialogModule } from '@nebular/theme';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
@@ -13,6 +13,7 @@ import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { NbAuthJWTInterceptor } from '@nebular/auth';
 import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 import { AngularMarkdownEditorModule } from 'angular-markdown-editor';
+import { NebularModule } from './nebular.module';
 
 @NgModule({
   declarations: [
@@ -24,8 +25,7 @@ import { AngularMarkdownEditorModule } from 'angular-markdown-editor';
     RoutingModule,
     CoreModule,
     LayoutModule,
-    NbThemeModule.forRoot({ name: 'default' }),
-    NbMenuModule.forRoot(),
+    NebularModule,
     AngularMarkdownEditorModule.forRoot({ iconlibrary: 'fa' }),
     MarkdownModule.forRoot({ loader: HttpClient,
       markedOptions: {
@@ -43,7 +43,7 @@ import { AngularMarkdownEditorModule } from 'angular-markdown-editor';
     SharedModule
   ],
 
-  providers: [NbSidebarService, NbMenuService, {provide: HTTP_INTERCEPTORS, useClass: NbAuthJWTInterceptor, multi: true}],
+  providers: [ {provide: HTTP_INTERCEPTORS, useClass: NbAuthJWTInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

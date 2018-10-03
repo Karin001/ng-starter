@@ -3,17 +3,18 @@ import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { loadIconSvg } from '../utils/loadIconSvg';
 import { BlogViewService } from './blog/blog-view.service';
+import { UploadBlogService } from './blog/upload-blog-service';
 
 
 @NgModule({
-  providers:[BlogViewService]
+  providers: [BlogViewService, UploadBlogService]
 })
 export class CoreModule {
   constructor(
-  @Optional() @SkipSelf() parentModule: CoreModule,
-  private iconRegistry: MatIconRegistry,
-  private sanitizer: DomSanitizer
-) {
+    @Optional() @SkipSelf() parentModule: CoreModule,
+    private iconRegistry: MatIconRegistry,
+    private sanitizer: DomSanitizer
+  ) {
     if (parentModule) {
       throw new Error(`CoreModule has already been loaded. Import Core modules in the AppModule only.`);
     }

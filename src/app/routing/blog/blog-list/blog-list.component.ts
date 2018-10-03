@@ -1,6 +1,8 @@
-import { Component, OnInit,ViewEncapsulation } from '@angular/core';
-import { BlogViewService } from '../../../core/blog/blog-view.service';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { BlogViewService, BlogViewResBodyModel } from '../../../core/blog/blog-view.service';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { map, switchMap, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-blog-list',
@@ -16,14 +18,16 @@ export class BlogListComponent implements OnInit {
   pageToLoadNext = 1;
   loading = false;
   loadAll = false;
+  bloglist$;
   constructor(
     private blogService: BlogViewService,
     public activatedRoute: ActivatedRoute
   ) {
-   this.activatedRoute.paramMap.subscribe(params => {
-      this.index = params.get('index')
-    });
-
+    this.activatedRoute.paramMap.pipe(
+      tap(() => { console.log(1); }),
+      switchMap(params => this.blogService.loadBlogList({ dir: params.get('index') })),
+      map(response => response.payload)
+    ).subscribe(val => this.bloglist = val );
   }
 
   // loadNext() {

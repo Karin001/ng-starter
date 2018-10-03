@@ -40,33 +40,22 @@ export class NormalComponent implements OnInit {
   items = [
     {
       title: '技术博客',
-      expanded: true,
-      children: [
-        {
-          title: '前端技术',
-          link: ['/blog/list', 'frontEnd-angular'],
-          // goes into angular `routerLink`
-        },
-        {
-          title: 'nodejs等',
-          ulr: '#', // goes directly into `href` attribute
-        },
-        {
-          title: '其他',
-          link: [],
-        },
-      ],
+      link: ['/blog/list/skill'],
     },
     {
-      title: '休闲',
-      link: [],
+      title: '生活博客',
+      link: ['/blog/list/seikats'],
+    },
+    {
+      title: '其他',
+      link: ['/blog/list/hoka'],
     },
     {
       title: '作品',
       link: [],
     },
     {
-      title: '写作',
+      title: '写博文',
       link: ['/blog/edit-blog']
     }
   ];
@@ -121,6 +110,8 @@ export class NormalComponent implements OnInit {
       this.sidebarFixed = currentPoint.width <= 512 ? true : false;
       if (currentPoint.width <= 512) {
         this.sidebarService.collapse();
+      } else {
+        this.sidebarService.expand();
       }
     });
     this.nbMenuService.onItemClick()

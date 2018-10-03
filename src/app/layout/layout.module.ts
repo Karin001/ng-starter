@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NormalComponent } from './normal/normal.component';
 import { PassportComponent } from './passport/passport.component';
 import { SharedModule } from '../shared/shared.module';
+import { NbDialogModule } from '@nebular/theme';
 const COMPONENT = [
   NormalComponent,
 
@@ -11,7 +12,7 @@ const COMPONENT = [
 @NgModule({
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
   ],
   declarations: COMPONENT,
   exports: COMPONENT

@@ -21,6 +21,7 @@ import {
   NbSelectModule,
 } from '@nebular/theme';
 import { FormsModule } from '@angular/forms';
+import { MyUiModule } from './my-ui/my-ui.module';
 const SHARED = [
   RouterModule,
   HttpClientModule,
@@ -39,7 +40,8 @@ const SHARED = [
   NbSearchModule,
   NbListModule,
   NbSelectModule,
-  FormsModule
+  FormsModule,
+  MyUiModule
 ];
 @NgModule({
   imports: SHARED,

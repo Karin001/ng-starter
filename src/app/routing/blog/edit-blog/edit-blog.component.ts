@@ -1,15 +1,17 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, OnInit, TemplateRef} from '@angular/core';
 import { EditorInstance } from 'angular-markdown-editor';
 import { NbDialogService, NbDialogRef } from '@nebular/theme';
 import { UploadBlogService, UploadBlogReqBodyModel } from '../../../core/blog/upload-blog-service';
-
+import { animteType1 } from '../../../animations'
 @Component({
   selector: 'app-edit-blog',
   templateUrl: './edit-blog.component.html',
-  styleUrls: ['./edit-blog.component.scss']
+  styleUrls: ['./edit-blog.component.scss'],
+  animations: [animteType1]
 })
 export class EditBlogComponent implements OnInit {
   [x: string]: any;
+  ninjiastate;
   form = {
     filename: null,
     content: null,

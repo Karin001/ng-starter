@@ -1,0 +1,24 @@
+:host {
+  position: absolute;
+  ul{
+    min-width: 100px;
+    max-width: 300px;
+    padding:1rem;
+    padding-left: 0;
+    background-color: white;
+    box-shadow: 2px 2px 2px 2px rgba($color: #000000, $alpha: .1);
+    .menu-item{
+      font-size: .8rem;
+      padding: 10px;
+      margin: 5px 0;
+      list-style-type: none;
+      transition: all .3s;
+      &:hover{
+        background-color: rgb(88, 189, 167);
+        transition: all .3s;
+        color:white;
+      }
+    }
+  }
+
+}

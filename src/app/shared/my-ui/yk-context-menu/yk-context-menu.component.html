@@ -1,0 +1,7 @@
+<ul [@saber]="state">
+  <li *ngFor="let item of items" (click)="item.action()" class="menu-item">
+    <i [class]="item.icon"></i>
+    <i class="nb-arrow-right"></i>
+    <span>{{item.content}}</span>
+  </li>
+</ul>

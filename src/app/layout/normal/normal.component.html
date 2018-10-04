@@ -12,8 +12,8 @@
     [name]="user?.name || '访客'"
     [title]="user?.name?'已登录':'点击登录 获得更多权限'"
     nbContextMenuPlacement ="left"
-    [nbContextMenu]="menu"
-    nbContextMenuTag="my-context-menu">
+    [appYkContextMenu]="menu"
+    >
 </nb-user>
 
 
@@ -31,7 +31,7 @@
       </ul>
   </nb-sidebar>
 
-  <nb-layout-column>
+  <nb-layout-column [@ninjia]="routerAnimationState">
     <router-outlet></router-outlet>
   </nb-layout-column>
 

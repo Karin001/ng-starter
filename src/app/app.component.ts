@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-import { OverlayContainer } from '@angular/cdk/overlay';
 
 @Component({
   selector: 'app-root',
@@ -9,13 +8,12 @@ import { OverlayContainer } from '@angular/cdk/overlay';
 })
 export class AppComponent {
   title = 'ng-stater';
-  theme = 'light-theme'
+  theme = 'light-theme';
+  routerAnimationState = 'active1';
   constructor(
 
-    private overlayContainer: OverlayContainer
   ) {
 
-
   }
-}
 
+}

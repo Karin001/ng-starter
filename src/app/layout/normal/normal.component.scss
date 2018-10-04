@@ -1,5 +1,5 @@
 @import '~include-media/dist/_include-media';
-:host ::ng-deep{
+:host {
     a{
         text-decoration: none;
     }
@@ -27,6 +27,7 @@
 
     ul {
       position: absolute;
+
    }
 
     ul li {

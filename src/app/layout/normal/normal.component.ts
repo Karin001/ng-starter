@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { filter, map, tap, switchMap } from 'rxjs/operators';
 import { NbThemeService, NbSidebarService, NbMenuService } from '@nebular/theme';
 import { NbAuthJWTToken, NbAuthService } from '@nebular/auth';
+import { Router, NavigationEnd } from '@angular/router';
+import { OverlayContainer } from '@angular/cdk/overlay';
+import { animteType1 } from '../../animations';
 const menu_logged = [
   {
     title: 'Change Avatar',
@@ -30,11 +33,12 @@ const menu_unlogged = [
 @Component({
   selector: 'app-normal',
   templateUrl: './normal.component.html',
-  styleUrls: ['./normal.component.scss']
+  styleUrls: ['./normal.component.scss'],
+  animations: [animteType1]
 })
 export class NormalComponent implements OnInit {
   avatarOnlyPicture = false;
-  menu = menu_unlogged;
+  menu;
   sidebarFixed = false;
   user;
   items = [
@@ -60,14 +64,24 @@ export class NormalComponent implements OnInit {
     }
   ];
   sidebarState = 'expanded';
+  routerAnimationState = 'active1';
+  menu_unlogged = [
+    { content: '登录', icon: 'fas fa-user', action: () => { this.router.navigate(['/auth/login']); } },
+    { content: '注册', icon: 'fas fa-sign-in-alt', action: () => { this.router.navigate(['/auth/register']); } },
+  ];
+  menu_logged = [
+    { content: '更改密码', icon: 'fas fa-key', action: () => { this.router.navigate(['/auth/request-password']); } },
+    { content: '登出', icon: 'fas fa-sign-out-alt', action: () => { this.router.navigate(['/auth/logout']); } },
+  ];
   constructor(
     private themeService: NbThemeService,
     private sidebarService: NbSidebarService,
     private nbMenuService: NbMenuService,
     private authService: NbAuthService,
-    public menuservice: NbMenuService
+    public menuservice: NbMenuService,
+    private router: Router,
   ) {
-
+    this.menu = this.menu_unlogged;
     // this.authService.isAuthenticated()
     // .pipe(
     //   switchMap(state => this.authService.getToken()),
@@ -92,10 +106,18 @@ export class NormalComponent implements OnInit {
         if (token.isValid()) {
           this.user = token.getPayload(); // here we receive a payload from the token and assigne it to our `user` variable
           console.log(this.user);
-          this.menu = menu_logged;
+          this.menu = this.menu_logged;
+        } else {
+          this.menu = this.menu_unlogged;
         }
 
       });
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.routerAnimationState = this.routerAnimationState === 'active1' ? 'active2' : 'active1'; // 路由全局动画，每次路由事件结束都会触发动画
+      }
+    });
+    // setInterval(() => { this.routerAnimationState = this.routerAnimationState === 'active1' ? 'active2' : 'active1'; }, 200)
   }
 
   ngOnInit() {

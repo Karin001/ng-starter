@@ -1,9 +1,13 @@
-<angular-markdown-editor
+<div  >
+  <angular-markdown-editor
+
   textareaId="editor1" rows="30"
   name="markdownText" [(ngModel)]="form.content"
   [options]="editorOptions"
  >
 </angular-markdown-editor>
+</div>
+
 <button nbButton (click)="upLoad(dialog)" [disabled]="!form.content">写好上传</button>
 <ng-template #dialog let-data let-ref="dialogRef">
   <nb-card  [style.width]="'40vw'" [style.height]="'50vh'" >

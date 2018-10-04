@@ -9,11 +9,13 @@ import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { AngularMarkdownEditorModule } from 'angular-markdown-editor';
 import { EditBlogComponent } from './edit-blog/edit-blog.component';
 import { NbDialogModule } from '@nebular/theme';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   imports: [
     CommonModule,
     BlogRoutingModule,
     SharedModule,
+
     AngularMarkdownEditorModule,
     NbDialogModule.forChild({ autoFocus: false }),
     MarkdownModule.forChild(),

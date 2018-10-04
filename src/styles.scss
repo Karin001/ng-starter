@@ -14,7 +14,11 @@
 
 
 
-
+.card-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 .menu-item{
   cursor: pointer;
 }

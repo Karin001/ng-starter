@@ -38,9 +38,20 @@ const menu_unlogged = [
 })
 export class NormalComponent implements OnInit {
   avatarOnlyPicture = false;
+ 
   menu;
   sidebarFixed = false;
   user;
+  get title(){
+    if(this.user && this.user.name !== 'lockUser' ){
+      return '已登录'
+    } else if(this.user && this.user.name === 'lockUser') {
+      return '请用新密码重新登录'
+    } else{
+      return '登录获得更多权限'
+    }
+    
+  }
   items = [
     {
       title: '技术博客',
@@ -104,10 +115,12 @@ export class NormalComponent implements OnInit {
       .subscribe((token: NbAuthJWTToken) => {
 
         if (token.isValid()) {
+          console.log('valid')
           this.user = token.getPayload(); // here we receive a payload from the token and assigne it to our `user` variable
           console.log(this.user);
           this.menu = this.menu_logged;
         } else {
+          console.log('invalid')
           this.menu = this.menu_unlogged;
         }
 
@@ -154,7 +167,7 @@ export class NormalComponent implements OnInit {
     this.sidebarService.toggle(false);
     return false;
   }
-  enableDarkTheme() {
-    //this.themeService.changeTheme('dark');
+  changeTheme(theme) {
+    this.themeService.changeTheme(theme);
   }
 }

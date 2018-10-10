@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { BlogViewService } from '../../../core/blog/blog-view.service';
 
 @Component({
   selector: 'app-blog-detail',
@@ -6,8 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./blog-detail.component.scss']
 })
 export class BlogDetailComponent implements OnInit {
-
-  constructor() { }
+  content;
+  constructor(
+    private route :ActivatedRoute,
+    private blogService: BlogViewService
+  ) {
+    this.route.paramMap.subscribe(params=>{
+      const id = params.get('id');
+      this.blogService.loadBlogContent({id}).subscribe(resBody => {
+        this.content = resBody.payload.content;
+        console.log(this.content)
+      })
+    })
+   }
 
   ngOnInit() {
   }

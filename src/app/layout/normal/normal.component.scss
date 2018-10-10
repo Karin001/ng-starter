@@ -10,7 +10,9 @@
     nb-user{
         margin-left: auto;
         padding-right: .5rem;
-
+        &:hover{
+          cursor: pointer;
+        }
     }
     .nb-badge.left {
       left: 18px !important;

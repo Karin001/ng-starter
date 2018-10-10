@@ -7,6 +7,7 @@ export const environment = {
   baseUrl: '',
   restApi: {
     loadBlogList: '/api/blog/bloglist',
+    loadBlogContent: '/api/blog/content',
     uploadBlog: '/api/blog/uploadBlog'
   }
 };

@@ -3,14 +3,14 @@
 
     <a href="#"><i class="nb-menu" (click)="toggle()"></i></a>
     Company Name
-    <!-- <nb-actions>
-      <nb-action icon="nb-home"></nb-action>
-      <nb-action icon="nb-search"></nb-action>
-    </nb-actions> -->
+    <nb-actions>
+      <nb-action icon="fas fa-sun" (click)="changeTheme('default')"></nb-action>
+      <nb-action icon="fas fa-moon" (click)="changeTheme('dark')"></nb-action>
+    </nb-actions>
     <nb-user size="middle"
     [onlyPicture]="avatarOnlyPicture"
     [name]="user?.name || '访客'"
-    [title]="user?.name?'已登录':'点击登录 获得更多权限'"
+    [title]="title"
     nbContextMenuPlacement ="left"
     [appYkContextMenu]="menu"
     >

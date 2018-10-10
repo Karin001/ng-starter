@@ -1,3 +1,4 @@
+@import '../../../../themes.scss';
 :host ::ng-deep{
   h2{
     font-size: 1.7rem;
@@ -22,5 +23,8 @@
   }
   pre{
     background-color: #eee;
+  }
+  .content{
+    //background: nb-theme(card-bg);
   }
 }

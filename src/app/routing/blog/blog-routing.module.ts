@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'list/skill', component: BlogListComponent },
   { path: 'list/hoka', component: BlogListComponent },
   { path: 'list/seikats', component: BlogListComponent },
-  { path: 'detail', component: BlogDetailComponent },
+  { path: 'detail/:id', component: BlogDetailComponent },
   { path: 'edit-blog', component: EditBlogComponent },
 ];
 

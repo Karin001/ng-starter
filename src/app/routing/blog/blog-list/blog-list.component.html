@@ -8,7 +8,11 @@
 
     >
     <nb-list-item *ngFor="let item of bloglist">
-      <a [routerLink]="['/blog/detail']">{{item.filename}}</a>
+      <h3>{{item.filename}}</h3>
+      <p>{{item.description}}</p>
+      <p>..{{item.created_on | date }}</p>
+      <a [routerLink]="['/blog/detail',item.id]">looklook -></a>
+      
     </nb-list-item>
 
   </nb-list>

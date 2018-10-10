@@ -27,7 +27,7 @@
         <li><a [routerLink]="['/blog/list/seikats']">Entertainment</a></li>
         <li><a [routerLink]="['/blog/list/hoka']">ほかのもの</a></li>
         <li><a [routerLink]="['/blog/list/skill']">作品</a></li>
-        <li><a [routerLink]="['/blog/edit-blog']">写博客</a></li>
+        <li><a *nbIsGranted="['create', 'blog']" [routerLink]="['/blog/edit-blog']">写博客</a></li>
       </ul>
   </nb-sidebar>
 

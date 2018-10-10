@@ -1,5 +1,7 @@
 @import '../../../../themes.scss';
+
 :host ::ng-deep{
+
   h2{
     font-size: 1.7rem;
     margin-bottom: 1rem
@@ -16,13 +18,20 @@
     font-size:1rem;
     margin-bottom: .4rem
   }
+  blockquote{
+   color: nb-theme(social-color-behance) !important;
+   border-left-color: nb-theme(card-header-active-bg) !important;
+  }
   li,p{
     font-size: .8rem;
     font-weight: 300;
     line-height: 1.5rem;
   }
   pre{
-    background-color: #eee;
+    padding:5px !important;
+    background-color:nb-theme(social-color-github) !important;
+    color:nb-theme(social-color-google) !important;
+    font-weight: 500;
   }
   .content{
     //background: nb-theme(card-bg);

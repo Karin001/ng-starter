@@ -22,6 +22,7 @@ import {
 } from '@nebular/theme';
 import { FormsModule } from '@angular/forms';
 import { MyUiModule } from './my-ui/my-ui.module';
+import { NbSecurityModule } from '@nebular/security';
 const SHARED = [
   RouterModule,
   HttpClientModule,
@@ -41,7 +42,8 @@ const SHARED = [
   NbListModule,
   NbSelectModule,
   FormsModule,
-  MyUiModule
+  MyUiModule,
+  NbSecurityModule
 ];
 @NgModule({
   imports: SHARED,

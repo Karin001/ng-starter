@@ -10,7 +10,6 @@ $nb-themes: nb-register-theme((
   //color-bg: #4ca6ff,
   //shadow: 0 1px 2px 0 #3780c0,
   layout-bg: #ffffff,
-  color-fg: #222222,
   font-main: "微软雅黑",
   menu-font-weight: 400,
 ), default, default);
@@ -21,6 +20,6 @@ $nb-themes: nb-register-theme((
 
   color-bg: #222222,
   shadow: 0 1px 2px 0 #000000,
-  color-fg: #303030,
-  layout-bg: #ededed,
+  //color-fg: #303030,
+  layout-bg: #41155a,
 ), dark, cosmic);

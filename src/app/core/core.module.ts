@@ -4,10 +4,16 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { loadIconSvg } from '../utils/loadIconSvg';
 import { BlogViewService } from './blog/blog-view.service';
 import { UploadBlogService } from './blog/upload-blog-service';
+import { NbRoleProvider } from '@nebular/security';
+import { RoleProvider } from '../role.provider';
 
 
 @NgModule({
-  providers: [BlogViewService, UploadBlogService]
+  providers: [
+    { provide: NbRoleProvider, useClass: RoleProvider },
+    BlogViewService,
+    UploadBlogService,
+  ]
 })
 export class CoreModule {
   constructor(

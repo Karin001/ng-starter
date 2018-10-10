@@ -14,7 +14,7 @@ import { NbAuthJWTInterceptor } from '@nebular/auth';
 import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 import { AngularMarkdownEditorModule } from 'angular-markdown-editor';
 import { NebularModule } from './nebular.module';
-
+import { NbSecurityModule } from '@nebular/security';
 @NgModule({
   declarations: [
     AppComponent
@@ -26,6 +26,25 @@ import { NebularModule } from './nebular.module';
     CoreModule,
     LayoutModule,
     NebularModule,
+    NbSecurityModule.forRoot({
+      accessControl: {
+        guest: {
+          view: ['blog', 'sakuhin'],
+        },
+        lockuser: {
+          parent: 'guest',
+        },
+        user: {
+          parent: 'guest',
+          create: 'blog',
+        },
+        moderator: {
+          parent: 'user',
+          create: 'blog',
+          remove: '*',
+        },
+      },
+    }),
     AngularMarkdownEditorModule.forRoot({ iconlibrary: 'fa' }),
     MarkdownModule.forRoot({ loader: HttpClient,
       markedOptions: {

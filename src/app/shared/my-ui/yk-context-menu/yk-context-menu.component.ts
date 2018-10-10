@@ -13,7 +13,7 @@ export class YkContextMenuComponent implements OnInit, OnDestroy {
   set location(val) {
     this.rd2.setStyle(this.view.element.nativeElement, 'top', val.top);
     this.rd2.setStyle(this.view.element.nativeElement, 'right', val.right);
-    console.log(this.view.element.nativeElement.style.right)
+    console.log(this.view.element.nativeElement.style.right);
   }
   constructor(
     private view: ViewContainerRef,

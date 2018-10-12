@@ -42,34 +42,15 @@ export class PvUvDirective implements AfterViewInit {
     const pvuvData = {
       statId: statId,
       browser: this.pvuv.getBrower(),
-      platForm: this.pvuv.getPlatform(),
+      platform: this.pvuv.getPlatform(),
       browerLanguage: this.pvuv.getBrowerLanguage()
     }
     this.pvuvdata = pvuvData;
 
 
   }
-  postToServer() {
-    const reqBody = {
-      name: this.appPvUv.payload.name,
-      searchId: this.appPvUv.payload.searchId || '',
-      statInfo: this.pvuvdata
-    }
-    this.http.post(this.appPvUv.apiUrl, reqBody).pipe(
-      retry(3),
-      catchError(err => {
-        throw 'error in source. Details: ' + err;
-      })
-    ).subscribe()
-  }
-  getPvUv(): Observable<any> {
-    return this.http.get(this.appPvUv.apiUrl).pipe(
-      retry(3),
-      catchError(err => {
-        throw 'error in source. Details: ' + err;
-      })
-    )
-  }
+
+
   ngAfterViewInit() {
     this.postToServer();
   }

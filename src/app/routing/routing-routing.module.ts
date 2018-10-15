@@ -21,6 +21,14 @@ const routes: Routes = [
       {
         path: 'blog',
         loadChildren: './blog/blog.module#BlogModule'
+      },
+      {
+        path: 'visitor',
+        loadChildren: './visitor/visitor.module#VisitorModule'
+      },
+      {
+        path: 'edit',
+        loadChildren: './edit-blog/edit-blog.module#EditBlogModule'
       }
     ]
   },

@@ -2,7 +2,7 @@
   <nb-layout-header fixed>
 
     <a href="#"><i class="nb-menu" (click)="toggle()"></i></a>
-    Company Name
+    截流
     <nb-actions>
       <nb-action icon="fas fa-sun" (click)="changeTheme('default')"></nb-action>
       <nb-action icon="fas fa-moon" (click)="changeTheme('dark')"></nb-action>
@@ -19,16 +19,19 @@
 
   </nb-layout-header>
 
-  <nb-sidebar [fixed]="sidebarFixed"  [state]="sidebarState">
+  <nb-sidebar [nbSpinner]="false" nbSpinnerStatus="active" [fixed]="sidebarFixed"  [state]="sidebarState">
     <!-- <nb-menu [items]="items" >
     </nb-menu> -->
     <ul>
-        <li><a [routerLink]="['/blog/list/skill']">技术博客</a></li>
+        <li ><a [routerLink]="['/blog/list/skill']">技术博客</a></li>
         <li><a [routerLink]="['/blog/list/seikats']">Entertainment</a></li>
-        <li><a [routerLink]="['/blog/list/hoka']">ほかのもの</a></li>
+        <li ><a [routerLink]="['/visitor/list/hoka']">訪問者データ</a></li>
         <li><a [routerLink]="['/blog/list/skill']">作品</a></li>
-        <li *nbIsGranted="['create', 'blog']"><a [routerLink]="['/blog/edit-blog']">写博客</a></li>
+        <li *nbIsGranted="['create', 'blog']"><a [routerLink]="['/edit/edit-blog']">写博客</a></li>
+        <li *ngIf="!user?.name"><a [routerLink]="['/auth/login']"> 登录</a></li>
+        <li *ngIf="!user?.name"><a [routerLink]="['/auth/register']">注册</a></li>
       </ul>
+
   </nb-sidebar>
 
   <nb-layout-column [@ninjia]="routerAnimationState">

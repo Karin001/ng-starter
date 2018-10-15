@@ -24,10 +24,10 @@ export class BlogListComponent implements OnInit {
     public activatedRoute: ActivatedRoute
   ) {
     this.activatedRoute.url.pipe(
-      tap((v) => { console.log(v[1]); }),
+
       switchMap(url => this.blogService.loadBlogList({ dir: url[1].path })),
       map(response => response.payload),
-      tap((v) => { console.log(v); }),
+
     ).subscribe(val => this.bloglist = val );
   }
 

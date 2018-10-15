@@ -47,7 +47,7 @@ export class PvUvService {
     statId,
     browser,
     platform,
-    browerLanguage,
+    browserLanguage,
     apiUrl
   }) {
     const reqBody = {
@@ -56,7 +56,7 @@ export class PvUvService {
       statId,
       browser,
       platform,
-      browerLanguage
+      browserLanguage
 
     };
     return this.http.post(apiUrl, reqBody).pipe(

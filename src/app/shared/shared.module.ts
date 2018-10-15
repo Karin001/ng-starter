@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { MarkdownModule } from 'ngx-markdown';
+import { NgxEchartsModule } from 'ngx-echarts';
+
 import {
   NbLayoutModule,
   NbSidebarModule,
@@ -16,13 +17,16 @@ import {
   NbCardModule,
   NbSpinnerModule,
   NbSearchModule,
-  NbInfiniteListDirective,
   NbListModule,
   NbSelectModule,
+  NbCalendarModule,
+  NbDialogModule,
+  NbButtonModule,
 } from '@nebular/theme';
 import { FormsModule } from '@angular/forms';
 import { MyUiModule } from './my-ui/my-ui.module';
 import { NbSecurityModule } from '@nebular/security';
+import { PvUvModule } from './pv-uv/pv-uv.module';
 const SHARED = [
   RouterModule,
   HttpClientModule,
@@ -43,7 +47,13 @@ const SHARED = [
   NbSelectModule,
   FormsModule,
   MyUiModule,
-  NbSecurityModule
+  NbSecurityModule,
+  NbCalendarModule,
+  NbDialogModule,
+  NbButtonModule,
+  NbSpinnerModule,
+  NgxEchartsModule,
+  PvUvModule
 ];
 @NgModule({
   imports: SHARED,

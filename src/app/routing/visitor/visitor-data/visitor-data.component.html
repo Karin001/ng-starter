@@ -1,0 +1,8 @@
+
+<div class="btn-group btn-divided-group btn-outline-divided-group">
+  <button nbButton [size]="'xsmall'" hero (click)="openWithBackdropClick()">选择日期 {{date | date:"yyyy/MM//dd"}}</button>
+
+</div>
+<div echarts [options]="options" [merge]="mergeData_pvuv" class="demo-chart"></div>
+<div echarts [options]="option" [merge]="mergeData_bingtu" class="demo-chart"></div>
+

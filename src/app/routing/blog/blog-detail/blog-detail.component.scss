@@ -4,34 +4,50 @@
 
   h2{
     font-size: 1.7rem;
-    margin-bottom: 1rem
+    margin-bottom: 1rem;
+    overflow-x: scroll;
+    &::-webkit-scrollbar-track{
+      background: none;
+    }
   }
   h3{
     font-size:1.5rem;
-    margin-bottom: .8rem
+    margin-bottom: .8rem;
+
   }
   h4{
     font-size:1.2rem;
-    margin-bottom: .6rem
+    margin-bottom: .6rem;
+
   }
   h5{
     font-size:1rem;
-    margin-bottom: .4rem
+    margin-bottom: .4rem;
+
   }
   blockquote{
    color: nb-theme(social-color-behance) !important;
    border-left-color: nb-theme(card-header-active-bg) !important;
+
+  }
+  P{
+    overflow-x: scroll;
+    &::-webkit-scrollbar-track{
+      background: none;
+    }
   }
   li,p{
     font-size: .8rem;
     font-weight: 300;
     line-height: 1.5rem;
+
   }
   pre{
     padding:5px !important;
     background-color:nb-theme(social-color-github) !important;
     color:nb-theme(social-color-google) !important;
     font-weight: 500;
+
   }
   .content{
     //background: nb-theme(card-bg);

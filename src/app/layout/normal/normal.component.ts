@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { filter, map, tap, switchMap } from 'rxjs/operators';
+import { filter, map, tap, switchMap, take } from 'rxjs/operators';
 import { NbThemeService, NbSidebarService, NbMenuService } from '@nebular/theme';
 import { NbAuthJWTToken, NbAuthService } from '@nebular/auth';
 import { Router, NavigationEnd } from '@angular/router';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { animteType1 } from '../../animations';
+import { SpinerService } from 'src/app/core/ui/spiner.service';
 const menu_logged = [
   {
     title: 'Change Avatar',
@@ -38,19 +39,19 @@ const menu_unlogged = [
 })
 export class NormalComponent implements OnInit {
   avatarOnlyPicture = false;
- 
+
   menu;
   sidebarFixed = false;
   user;
-  get title(){
-    if(this.user && this.user.name !== 'lockUser' ){
+  get title() {
+    if (this.user && this.user.name !== 'lockUser') {
       return '已登录'
-    } else if(this.user && this.user.name === 'lockUser') {
+    } else if (this.user && this.user.name === 'lockUser') {
       return '请用新密码重新登录'
-    } else{
+    } else {
       return '登录获得更多权限'
     }
-    
+
   }
   items = [
     {
@@ -76,6 +77,7 @@ export class NormalComponent implements OnInit {
   ];
   sidebarState = 'expanded';
   routerAnimationState = 'active1';
+  showSpiner = false;
   menu_unlogged = [
     { content: '登录', icon: 'fas fa-user', action: () => { this.router.navigate(['/auth/login']); } },
     { content: '注册', icon: 'fas fa-sign-in-alt', action: () => { this.router.navigate(['/auth/register']); } },
@@ -90,8 +92,10 @@ export class NormalComponent implements OnInit {
     private nbMenuService: NbMenuService,
     private authService: NbAuthService,
     public menuservice: NbMenuService,
+
     private router: Router,
   ) {
+
     this.menu = this.menu_unlogged;
     // this.authService.isAuthenticated()
     // .pipe(

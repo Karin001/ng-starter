@@ -17,7 +17,6 @@ export class BlogDetailComponent implements OnInit {
       const id = params.get('id');
       this.blogService.loadBlogContent({id}).subscribe(resBody => {
         this.content = resBody.payload.content;
-        console.log(this.content)
       })
     })
    }

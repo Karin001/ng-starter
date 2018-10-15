@@ -28,6 +28,7 @@
             ],
             "styles": [
               "src/styles.scss",
+              "./src/loading.css",
               "node_modules/nebular-icons/css/nebular-icons.css",
               "node_modules/bootstrap/dist/css/bootstrap.css",
               "node_modules/prismjs/themes/prism-okaidia.css",

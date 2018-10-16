@@ -2,7 +2,7 @@
 @import '~@nebular/theme/styles/themes/default';
 @import '~@nebular/theme/styles/themes/cosmic';
 
-$nb-enabled-themes: (default, dark);
+$nb-enabled-themes: (dark,default);
 
 // default theme
 $nb-themes: nb-register-theme((

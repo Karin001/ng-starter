@@ -6,7 +6,7 @@ import { NbDialogModule, NbThemeModule, NbMenuModule, NbSidebarService, NbMenuSe
   declarations: [],
   imports: [
     NbDialogModule.forRoot(),
-    NbThemeModule.forRoot({ name: 'default' }),
+    NbThemeModule.forRoot({ name: 'dark' }),
     NbMenuModule.forRoot(),
   ],
   exports: [],

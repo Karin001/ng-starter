@@ -22,6 +22,7 @@ import {
   NbCalendarModule,
   NbDialogModule,
   NbButtonModule,
+  NbProgressBarModule,
 } from '@nebular/theme';
 import { FormsModule } from '@angular/forms';
 import { MyUiModule } from './my-ui/my-ui.module';
@@ -53,6 +54,7 @@ const SHARED = [
   NbButtonModule,
   NbSpinnerModule,
   NgxEchartsModule,
+  NbProgressBarModule,
   PvUvModule
 ];
 @NgModule({

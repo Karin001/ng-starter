@@ -1,5 +1,25 @@
 :host{
-   
+  p{
+    font-size: .8rem !important;
+    line-height: 1.2rem !important;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    background-color: rgb(32, 32, 32);
+  }
+  h5{
+    text-align: center;
+  }
+  nb-progress-bar {
+    flex: 1;
+  }
+  img{
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin: 0 auto;
+  }
     .scene {
         width: 100%;
         height: 100%;
@@ -8,7 +28,7 @@
         overflow: hidden;
         //transform: translate(-50%,-50%);
       }
-      
+
         .confirm{
             position: absolute;
             top:50%;
@@ -22,11 +42,11 @@
                 margin-top:10px;
             }
         }
-       
-     
-      
-      
-      
+
+
+
+
+
       .cloud1 {
         width: 200px;
         height: 150px;
@@ -35,7 +55,7 @@
         right: -50px;
         animation: float2 4s ease-in-out infinite alternate;
       }
-      
+
       .cloud2 {
         width: 200px;
         height: 150px;
@@ -44,17 +64,17 @@
         left: -50px;
         animation: float1 4s ease-in-out infinite alternate;
       }
-      
+
       @keyframes float1 {
         from {transform: translateX(-10px);}
         to {transform: translateX(10px);}
       }
-      
+
       @keyframes float2 {
         from {transform: translateX(20px);}
         to {transform: translateX(-30px);}
       }
-      
+
       .circle {
         width: 80px;
         height: 80px;
@@ -64,7 +84,7 @@
         border-radius: 50%;
         background-color:rgb(0, 162, 255);
       }
-      
+
       .circle::before {
         content: "";
         width: 80px;
@@ -75,7 +95,7 @@
         border-radius: 50%;
         background-color: rgb(0, 162, 255);
       }
-      
+
       .circle::after {
         content: "";
         width: 80px;
@@ -86,7 +106,7 @@
         border-radius: 50%;
         background-color: rgb(0, 162, 255);
       }
-      
+
       .filler {
         width: 145px;
         height: 40px;
@@ -97,7 +117,7 @@
         background-color:rgb(0, 162, 255);
         box-shadow: inset 0 -5px purple;
       }
-      
+
       .star1 {
         width: 20px;
         height: 5px;
@@ -108,7 +128,7 @@
         right: 10px;
         animation: twinkle 0.5s 0.2s linear infinite alternate;
       }
-      
+
       .star1::after {
         content: "";
         width: 5px;
@@ -120,7 +140,7 @@
         right: 8px;
         animation: twinkle 0.5s  0.2s linear infinite alternate;
       }
-      
+
       .star2 {
         width: 20px;
         height: 5px;
@@ -131,7 +151,7 @@
         right: 200px;
         animation: twinkle 0.5s 0.3s linear infinite alternate;
       }
-      
+
       .star2::after {
         content: "";
         width: 5px;
@@ -143,7 +163,7 @@
         right: 8px;
         animation: twinkle 0.5s 0.3s linear infinite alternate;
       }
-      
+
       .star3 {
         width: 20px;
         height: 5px;
@@ -154,7 +174,7 @@
         left: 20px;
         animation: twinkle 0.5s linear infinite alternate;
       }
-      
+
       .star3::after {
         content: "";
         width: 5px;
@@ -166,11 +186,10 @@
         left: 8px;
         animation: twinkle 0.5s linear infinite alternate;
       }
-      
+
       @keyframes twinkle {
         to {background-color: rgb(255, 218, 9);}
       }
-      
-     
+
+
 }
- 

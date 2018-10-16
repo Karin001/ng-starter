@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./default.component.scss']
 })
 export class DefaultComponent implements OnInit {
-
+  doubanCode
+  openFile =false;
   constructor() { }
 
   ngOnInit() {
+  }
+  checkVal(){
+    if(this.doubanCode === 'dbdb'){
+      this.openFile = true;
+    }
   }
 
 }

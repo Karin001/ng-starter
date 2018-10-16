@@ -23,13 +23,13 @@
     <!-- <nb-menu [items]="items" >
     </nb-menu> -->
     <ul>
-        <li ><a [routerLink]="['/blog/list/skill']">技术博客</a></li>
-        <li><a [routerLink]="['/blog/list/seikats']">Entertainment</a></li>
-        <li ><a [routerLink]="['/visitor/list/hoka']">訪問者データ</a></li>
-        <li><a [routerLink]="['/blog/list/skill']">作品</a></li>
-        <li *nbIsGranted="['create', 'blog']"><a [routerLink]="['/edit/edit-blog']">写博客</a></li>
-        <li *ngIf="!user?.name"><a [routerLink]="['/auth/login']"> 登录</a></li>
-        <li *ngIf="!user?.name"><a [routerLink]="['/auth/register']">注册</a></li>
+        <li [routerLink]="['/blog/list/skill']"><a>技术博客</a></li>
+        <li  [routerLink]="['/blog/list/seikats']"><a>Entertainment</a></li>
+        <li [routerLink]="['/visitor/list/hoka']"><a >訪問者データ</a></li>
+        <li [routerLink]="['/blog/list/skill']"><a >作品</a></li>
+        <li *nbIsGranted="['create', 'blog']" [routerLink]="['/edit/edit-blog']"><a>写博客</a></li>
+        <li *ngIf="!user?.name" [routerLink]="['/auth/login']"><a> 登录</a></li>
+        <li *ngIf="!user?.name" [routerLink]="['/auth/register']"><a>注册</a></li>
       </ul>
 
   </nb-sidebar>

@@ -1,7 +1,132 @@
+$bg: #E9EDF0;
+$profile-width: 200px;
+/* Global Button Styles */
+a.animated-button:link, a.animated-button:visited {
+	position: relative;
+	display: block;
+	margin: 30px auto 0;
+	padding: 14px 15px;
+	color: #fff;
+	font-size:14px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	overflow: hidden;
+	letter-spacing: .08em;
+	border-radius: 0;
+	text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
+}
+a.animated-button:link:after, a.animated-button:visited:after {
+	content: "";
+	position: absolute;
+	height: 0%;
+	left: 50%;
+	top: 50%;
+	width: 150%;
+	z-index: -1;
+	-webkit-transition: all 0.75s ease 0s;
+	-moz-transition: all 0.75s ease 0s;
+	-o-transition: all 0.75s ease 0s;
+	transition: all 0.75s ease 0s;
+}
+a.animated-button:link:hover, a.animated-button:visited:hover {
+	color: #FFF;
+	text-shadow: none;
+}
+a.animated-button:link:hover:after, a.animated-button:visited:hover:after {
+	height: 450%;
+}
+a.animated-button:link, a.animated-button:visited {
+	position: relative;
+	display: block;
+	margin: 30px auto 0;
+	padding: 14px 15px;
+	color: #fff;
+	font-size:14px;
+	border-radius: 0;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	overflow: hidden;
+	letter-spacing: .08em;
+	text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
+}
+
+/* Victoria Buttons */
+
+a.animated-button.victoria-one {
+	border: 2px solid #D24D57;
+}
+a.animated-button.victoria-one:after {
+	background: #D24D57;
+	-moz-transform: translateX(-50%) translateY(-50%) rotate(-25deg);
+	-ms-transform: translateX(-50%) translateY(-50%) rotate(-25deg);
+	-webkit-transform: translateX(-50%) translateY(-50%) rotate(-25deg);
+	transform: translateX(-50%) translateY(-50%) rotate(-25deg);
+}
+a.animated-button.victoria-two {
+	border: 2px solid #D24D57;
+}
+a.animated-button.victoria-two:after {
+	background: #D24D57;
+	-moz-transform: translateX(-50%) translateY(-50%) rotate(25deg);
+	-ms-transform: translateX(-50%) translateY(-50%) rotate(25deg);
+	-webkit-transform: translateX(-50%) translateY(-50%) rotate(25deg);
+	transform: translateX(-50%) translateY(-50%) rotate(25deg);
+}
+a.animated-button.victoria-three {
+	border: 2px solid #D24D57;
+}
+a.animated-button.victoria-three:after {
+	background: #D24D57;
+	opacity: .5;
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+a.animated-button.victoria-three:hover:after {
+	height: 140%;
+	opacity: 1;
+}
+a.animated-button.victoria-four {
+	border: 2px solid #D24D57;
+}
+a.animated-button.victoria-four:after {
+	background: #D24D57;
+	opacity: .5;
+	-moz-transform: translateY(-50%) translateX(-50%) rotate(90deg);
+	-ms-transform: translateY(-50%) translateX(-50%) rotate(90deg);
+	-webkit-transform: translateY(-50%) translateX(-50%) rotate(90deg);
+	transform: translateY(-50%) translateX(-50%) rotate(90deg);
+}
+a.animated-button.victoria-four:hover:after {
+	opacity: 1;
+	height: 600% !important;
+}
+
+
+
+
+
 :host{
   p{
     font-size: .8rem !important;
     line-height: 1.2rem !important;
+
+  }
+  .kyocho{
+    color: #D24D57 !important;
   }
   .container {
     display: flex;
@@ -20,176 +145,156 @@
     display: block;
     margin: 0 auto;
   }
-    .scene {
-        width: 100%;
-        height: 100%;
-        background: rgb(54, 11, 51);
-       position: relative;
-        overflow: hidden;
-        //transform: translate(-50%,-50%);
+  h1,h2 {
+    margin-top: 10px;
+  }
+  h1 {
+    line-height: 30px;
+    color: darken(desaturate($bg, 5%), 50%);
+  }
+
+  .wrapper {
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    @media (min-width: 768px) {
+      height: 100%;
+    }
+  }
+
+  .container {
+    @keyframes flip-in-hor-bottom {
+      0% {
+        transform: rotateX(80deg);
+        opacity: 0;
       }
-
-        .confirm{
-            position: absolute;
-            top:50%;
-            left:50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            button{
-                margin-top:10px;
-            }
-        }
-
-
-
-
-
-      .cloud1 {
-        width: 200px;
-        height: 150px;
-        position: absolute;
-        top: 130px;
-        right: -50px;
-        animation: float2 4s ease-in-out infinite alternate;
+      100% {
+        transform: rotateX(0);
+        opacity: 1;
       }
+    }
+    animation: flip-in-hor-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 
-      .cloud2 {
-        width: 200px;
-        height: 150px;
-        position: absolute;
-        top: 0;
-        left: -50px;
-        animation: float1 4s ease-in-out infinite alternate;
-      }
+    position: relative;
+    box-sizing: border-box;
+    width: 80%;
+    background: rgb(54, 54, 54);
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 700px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.03);
 
-      @keyframes float1 {
-        from {transform: translateX(-10px);}
-        to {transform: translateX(10px);}
-      }
 
-      @keyframes float2 {
-        from {transform: translateX(20px);}
-        to {transform: translateX(-30px);}
-      }
 
-      .circle {
-        width: 80px;
-        height: 80px;
-        position: absolute;
-        top: 0;
-        left: 60px;
-        border-radius: 50%;
-        background-color:rgb(0, 162, 255);
-      }
+    @media (max-width: 768px) {
+      width: 100%;
+      min-width: 350px;
+    }
 
-      .circle::before {
-        content: "";
-        width: 80px;
-        height: 80px;
-        position: absolute;
-        top: 30px;
-        left: -40px;
-        border-radius: 50%;
-        background-color: rgb(0, 162, 255);
+    & > div {
+      box-sizing: border-box;
+      padding: 50px 30px;
+      @media (max-width: 420px) {
+        padding: 40px 30px !important;
       }
+    }
+  }
 
-      .circle::after {
-        content: "";
-        width: 80px;
-        height: 80px;
-        position: absolute;
-        top: 30px;
-        left: 40px;
-        border-radius: 50%;
-        background-color: rgb(0, 162, 255);
-      }
+  .profile {
+    position: absolute;
+    text-align: center;
+    width: $profile-width;
+    color: #fff;
+    background: rgba(0,0,0,.5) url(../../../assets/webbg.jpg) no-repeat top;
+    //background-size: cover;
+    height: 100%;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
 
-      .filler {
-        width: 145px;
-        height: 40px;
-        border-radius: 17px;
-        position: absolute;
-        top: 70px;
-        left: 28px;
-        background-color:rgb(0, 162, 255);
-        box-shadow: inset 0 -5px purple;
+    .meta {
+      position: relative;
+      z-index: 1;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(0,0,0,.3), transparent);
+    }
+    .avatar {
+      width: 50%;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 0 5px rgba(0,0,0,.4);
+    }
+    h2 {
+      font-size: 22px;
+      margin-bottom: 2px;
+    }
+    .position {
+      font-size: 13px;
+    }
+    .social {
+      padding-top: 15px;
+      i {
+        margin: 0 5px;
+        transform: scale(1.6);
       }
+    }
+    a {
+      color: #fff;
+    }
+  }
 
-      .star1 {
-        width: 20px;
-        height: 5px;
-        border-radius: 5px;
-        background-color:rgb(100, 96, 139);
-        position: absolute;
-        top: 20px;
-        right: 10px;
-        animation: twinkle 0.5s 0.2s linear infinite alternate;
-      }
+  .portfolio {
+    margin-left: $profile-width;
+    padding: 50px !important;
+  }
 
-      .star1::after {
-        content: "";
-        width: 5px;
-        height: 20px;
-        border-radius: 5px;
-        background-color: rgb(100, 96, 139);
-        position: absolute;
-        top: -7px;
-        right: 8px;
-        animation: twinkle 0.5s  0.2s linear infinite alternate;
-      }
+  @media (max-width: 670px) {
+    .profile {
+      position: relative;
+      width: 100%;
+      background-size: cover;
 
-      .star2 {
-        width: 20px;
-        height: 5px;
-        border-radius: 5px;
-        background-color:rgb(100, 96, 139);
-        position: absolute;
-        top: 93px;
-        right: 200px;
-        animation: twinkle 0.5s 0.3s linear infinite alternate;
+      h2 {
+        font-size: 28px;
+        margin-bottom: 5px;
       }
+    }
+    .avatar {
+      width: 80px !important;
+    }
+    .portfolio {
+      margin: 0;
+    }
+  }
 
-      .star2::after {
-        content: "";
-        width: 5px;
-        height: 20px;
-        border-radius: 5px;
-        background-color: rgb(100, 96, 139);
-        position: absolute;
-        top: -7px;
-        right: 8px;
-        animation: twinkle 0.5s 0.3s linear infinite alternate;
-      }
-
-      .star3 {
-        width: 20px;
-        height: 5px;
-        border-radius: 5px;
-        background-color:rgb(100, 96, 139);
-        position: absolute;
-        top: 130px;
-        left: 20px;
-        animation: twinkle 0.5s linear infinite alternate;
-      }
-
-      .star3::after {
-        content: "";
-        width: 5px;
-        height: 20px;
-        border-radius: 5px;
-        background-color:rgb(100, 96, 139);
-        position: absolute;
-        top: -7px;
-        left: 8px;
-        animation: twinkle 0.5s linear infinite alternate;
-      }
-
-      @keyframes twinkle {
-        to {background-color: rgb(255, 218, 9);}
-      }
+  .footer {
+    color: darken(desaturate($bg, 10%), 10%);
+    padding: 20px 0;
+    .fa {
+      font-size: 12px;
+      padding: 0 5px;
+    }
+  }
+  .text-center {
+    text-align:center;
+  }
+  .label {
+    display: normal;
+    color: lighten(desaturate($bg, 10%), 5%);
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 3px;
+    background: darken(desaturate($bg, 10%), 6%);
+  }
 
 
 }

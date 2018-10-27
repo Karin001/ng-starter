@@ -1,216 +1,28 @@
-<div class="scene" *ngIf="doubanCode !== 'dbdb'">
-  <div class="upper">
 
-    <div class="star1"></div>
-    <div class="star2"></div>
-    <div class="star3"></div>
-    <div class="cloud1">
-      <div class="circle"></div>
-      <div class="filler"></div>
+<div class="wrapper">
+  <div class="container">
+    <div class="profile">
+      <div class="meta"><img class="avatar" src="assets/acharya01.jpg"/>
+        <h2>yukarin</h2>
+        <div class="position">Front-end Developer</div>
+        <div class="social">
+          <a href="https://github.com/Karin001"><i class="fab fa-github"></i></a>
+
+        </div>
+      </div>
+      <div class="overlay"></div>
     </div>
-    <div class="cloud2">
-      <div class="circle"></div>
-      <div class="filler"></div>
-    </div>
-    <div class="confirm">
-      <input nbInput [(ngModel)]="doubanCode" placeholder="  请敲门      ^_^" type="text">
+    <div class="portfolio">
+      <h1>hello</h1>
+      <p>这是我用来求职和交友的web。</p>
+      <p>目前定居成都，已经到了不安分的年纪还是没有安分下来。</p>
+      <p class="kyocho">主攻前端，Angular。</p>
+      <p>因为js了，所以有时也会写写koa，放在自己租的阿里云上。</p>
+      <p>最近正在修炼rxjs，推荐《深入浅出rxjs》一书。</p>
+      <div> <a href="#" [routerLink]="['/hr']" class="btn btn-sm animated-button victoria-one">HR大佬点此</a> </div>
+      <div> <a href="#" [routerLink]="['/douban']" class="btn btn-sm animated-button victoria-two">豆友看这里</a> </div>
     </div>
   </div>
 
 </div>
-<div *ngIf="doubanCode === 'dbdb'">
-  <nb-flip-card>
-    <nb-card-front>
-      <nb-card accent="danger">
-        <nb-card-body>
-          <p> 2016年7月，还没过完生日，我的焦虑症状就爆发了。</p>
-          <P> 至于原因，应该是我一直模棱两可的个性，不抗压的体质，和糟糕的生活习惯。</P>
-          <p> 又或者没有什么原因，它只是单纯的出现在我面前的一个台阶。</p>
-          <p> 那段时间，从前轻而易举做到的事变得难以完成，对我打击很大，一度认为自己成了废人。</p>
 
-        </nb-card-body>
-      </nb-card>
-    </nb-card-front>
-    <nb-card-back>
-      <nb-card>
-        <nb-card-body>
-          <h2>信じて</h2>
-        </nb-card-body>
-      </nb-card>
-    </nb-card-back>
-  </nb-flip-card>
-  <nb-card>
-    <nb-card-body>
-      <img src="https://yu-mdfile.oss-cn-hangzhou.aliyuncs.com/blog/pt.jpg" alt="">
-    </nb-card-body>
-  </nb-card>
-  <nb-card>
-    <nb-card-body>
-      <p>
-        记得有次小区停水，我去打水，
-        提着桶走到半路便觉得自己快要挂了，回去后立刻躺下，然后努力的呼吸，过了很久才有所缓解。
-      </p>
-      <p>那以后便害怕出门，害怕自己在某个不为人知的地方突然挂掉</p>
-      <p>我每天的生活只有呼吸，学会呼吸，因为我觉得呼吸好难。</p>
-      <p>之前难以割舍的习惯与爱好也突然间消失，让我每天就这么赤裸裸的面对着自己的弱小。</p>
-      <p>
-        有时会察觉到这种绝望似乎以前也曾有一闪而过，可我未曾关注它们，我选择了逃避，沉迷于于虚幻中。
-        很早的时候我失眠，接着一段时间心慌，我并未意识到这是对我的警告，提醒我应该有所改变。
-      </p>
-      <p>
-        “重度焦虑，抑郁” 这是我去4医院时，医生跟我下的结论。
-
-      </p>
-      <p> 在做测试题的时候，我发现每一道题目似乎都是一道镜子，照出我与曾经的我。
-        这种感觉就像自己看着自己却不认识自己。
-      </p>
-      <p>
-        医生在测试结果出来之前，试探我的程度，问我想不想耍朋友，
-        我撒了谎，因为我觉得自己没有资格，我这个样子实在没有脸去折腾别人。
-        我觉得这样的回答应该加分了。
-      </p>
-    </nb-card-body>
-  </nb-card>
-
-
-  <nb-flip-card>
-    <nb-card-front>
-      <nb-card accent="danger">
-        <nb-card-body>
-          <p>
-            离开医院，我没有吃药。之后受不了，就又去了医院。这次医生重新给开了点简单的药，我才吃了。
-          </p>
-          <p>
-            焦虑爆发之后我瘦了20斤，每天近乎疯狂的掉头发，像是变了一个人。
-            同事对我的状态很惊讶，我总是努力装作正常，说什么肠胃不好之类的搪塞过去。
-            其实我已经偷偷请好了假，准备在快要爆炸的时候逃离出去。
-          </p>
-
-        </nb-card-body>
-      </nb-card>
-    </nb-card-front>
-    <nb-card-back>
-      <nb-card>
-        <nb-card-body>
-          <h2>君は</h2>
-        </nb-card-body>
-      </nb-card>
-    </nb-card-back>
-  </nb-flip-card>
-  <img src="https://yu-mdfile.oss-cn-hangzhou.aliyuncs.com/blog/bz.jpg" alt="">
-  <nb-card>
-    <nb-card-body>
-      <p>
-        好在我没有爆炸。
-        在我最难受的那段时间，几乎没有遇到让我为难的事，
-        需要消耗体力的活动也都被我一一化解开来。
-      </p>
-      <p>
-        我渐渐又开始看看书，偶尔看看电视，有时候会看到一些令我振奋的东西，我才知道我需要那些能量，于是我总是不会轻易
-        放过。
-      </p>
-      <p>
-        我开始重新变得怀旧，我想回到原点。
-      </p>
-      <p>
-        我在网易云找小时候看过的动画片bgm，在上班的路上听。
-        听到熟悉的旋律时，就那么一刹那，眼睛会湿润一下，然后我握紧了拳头，告诉自己，我要努力。
-      </p>
-      <p>就这样很中二的走在路上，日复一日。</p>
-      <p>我又开始迷上了写代码，喜欢这种单纯的投入，因为对方一定会回应你</p>
-
-      <p>敲键盘时听的音乐，感觉比平时更好听</p>
-      <p>此时我感觉自己的状态已经回复到了这么多</p>
-      <div class="container">
-
-        <nb-progress-bar [value]="value" [status]="'danger'" [displayValue]="true"></nb-progress-bar>
-
-      </div>
-    </nb-card-body>
-  </nb-card>
-
-
-  <nb-card>
-    <nb-card-body>
-      <p>之后我听到了一款叫如龙的游戏的原声音乐，觉得很好，过了不久我就买了ps4，然后撸代码烦了就开玩。</p>
-      <p>这款游戏给了我一种新的体悟，在一个充满诱惑的欲望之城，居然可以这样贯彻自己，丝毫不为所动。我觉得这样很酷，很自在。</p>
-      <p>也许其他玩家没有这种感觉，也许这款游戏也不是为了让玩家有这样的游戏体验而存在，但是对我来说就是如此。</p>
-      <p>我想我还可以更加努力</p>
-      <div class="container">
-
-        <nb-progress-bar [value]="value1" [status]="'warning'" [displayValue]="true"></nb-progress-bar>
-
-      </div>
-
-    </nb-card-body>
-
-  </nb-card>
-  <nb-card>
-      <nb-card-body>
-       <p>我也渐渐明确了自己将要走的路，那即是：伸张正义，准时睡觉</p>
-          <div class="container">
-
-            <nb-progress-bar [value]="value2" [status]="info" [displayValue]="true"></nb-progress-bar>
-
-          </div>
-      </nb-card-body>
-    </nb-card>
-  <nb-flip-card>
-    <nb-card-front>
-      <nb-card accent="danger">
-        <nb-card-body>
-
-          <p>还有很多话想说，害怕看得人睡着</p>
-          <p>我也老大不小了，我希望</p>
-          <p>接下来的路</p>
-          <p>能有一个人一起携手度过，无论风雨。</p>
-          <p>只有你才能把我调到100%的状态</p>
-          <p>请把我调到100%的状态,之后会弹出两张照片，大概描述了我的实体<i class="fa fa-arrow-down"></i></p>
-        </nb-card-body>
-      </nb-card>
-    </nb-card-front>
-    <nb-card-back>
-      <nb-card>
-        <nb-card-body>
-          <h2>☆ヽ(最´∀｀高)ﾉ★</h2>
-        </nb-card-body>
-      </nb-card>
-    </nb-card-back>
-  </nb-flip-card>
-
-  <nb-reveal-card *ngIf="value3 === 100">
-      <nb-card-front>
-        <nb-card>
-          <nb-card-body>
-           <img src="" alt="">
-          </nb-card-body>
-        </nb-card>
-      </nb-card-front>
-      <nb-card-back>
-        <nb-card>
-          <nb-card-body>
-            <img src="" alt="">
-          </nb-card-body>
-        </nb-card>
-      </nb-card-back>
-    </nb-reveal-card>
-    <nb-card *ngIf="value3 === 100">
-      <nb-card-body>
-          <h5>请把照片当做方便面的效果图</h5>
-      </nb-card-body>
-    </nb-card>
-
-  <div class="container" *ngIf="value3 !== 100">
-
-    <nb-actions size="medium">
-      <nb-action icon="nb-arrow-down" (click)="setValue(value3 - 25)"></nb-action>
-    </nb-actions>
-    <nb-progress-bar [value]="value3" [status]="status" [displayValue]="true"></nb-progress-bar>
-    <nb-actions size="medium">
-      <nb-action icon="nb-arrow-up" (click)="setValue(value3 + 5)"></nb-action>
-    </nb-actions>
-
-  </div>
-
-
-</div>

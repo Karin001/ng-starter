@@ -29,6 +29,14 @@ const routes: Routes = [
       {
         path: 'edit',
         loadChildren: './edit-blog/edit-blog.module#EditBlogModule'
+      },
+      {
+        path: 'douban',
+        loadChildren: './douban/douban.module#DoubanModule'
+      },
+      {
+        path: 'hr',
+        loadChildren: './hr/hr.module#HrModule'
       }
     ]
   },

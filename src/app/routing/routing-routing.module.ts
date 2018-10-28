@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { NormalComponent } from '../layout/normal/normal.component';
 import { DefaultComponent } from './default/default.component';
 import { PassportComponent } from '../layout/passport/passport.component';
@@ -79,7 +79,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {preloadingStrategy:  PreloadAllModules})],
   exports: [RouterModule]
 })
 export class RoutingRoutingModule { }

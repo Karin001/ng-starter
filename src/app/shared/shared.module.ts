@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { NgxEchartsModule } from 'ngx-echarts';
+
 
 import {
   NbLayoutModule,
@@ -53,7 +53,7 @@ const SHARED = [
   NbDialogModule,
   NbButtonModule,
   NbSpinnerModule,
-  NgxEchartsModule,
+
   NbProgressBarModule,
   PvUvModule
 ];

@@ -1,5 +1,12 @@
 
-<div markdown [data]="content" class="content">
+<div [hidden]="editMod" markdown [data]="content" class="anim" (scroll)="haha()">
 
+</div>
+<div class="tool" *nbIsGranted="['create', 'blog']" >
+  <span (click)="editMod = !editMod">{{editMod?"return":"edit"}}</span>
+  <span [hidden]="!editMod" (click)="save()"> save </span>
+</div>
+<div [hidden]="!editMod" class="edit">
+  <textarea [(ngModel)]="content"></textarea>
 </div>
 

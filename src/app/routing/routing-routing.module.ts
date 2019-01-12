@@ -17,7 +17,7 @@ const routes: Routes = [
     path: '',
     component: NormalComponent,
     children: [
-      { path: '', component: DefaultComponent },
+      { path: '', redirectTo: '/blog/list/skill', pathMatch: 'full'},
       {
         path: 'blog',
         loadChildren: './blog/blog.module#BlogModule'

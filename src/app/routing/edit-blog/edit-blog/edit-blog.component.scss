@@ -32,6 +32,7 @@
     button{
       font-size:.8rem !important;
       padding:0.4rem .6rem !important;
+
       color: #222222 !important;
       &:hover{
         color: aliceblue !important;
@@ -42,6 +43,14 @@
   .fade-in {
     animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     max-width: 1000px;
+  }
+  .tool{
+    margin-top:20px;
+    display: flex;
+    justify-content: center;
+    button{
+      margin-right: 50px;
+    }
   }
   @keyframes fade-in {
     0% {

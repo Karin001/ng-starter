@@ -7,8 +7,11 @@
  >
 </angular-markdown-editor>
 </div>
+<div class="tool">
+  <button nbButton (click)="back()" >取消</button>
+  <button nbButton (click)="upLoad(dialog)" [disabled]="!form.content">上传</button>
+</div>
 
-<button nbButton (click)="upLoad(dialog)" [disabled]="!form.content">写好上传</button>
 <ng-template #dialog let-data let-ref="dialogRef">
   <nb-card  [style.width]="'40vw'" [style.height]="'50vh'" >
     <nb-card-header>message</nb-card-header>
@@ -21,7 +24,7 @@
       </nb-select>
       <textarea [(ngModel)]="form.description" nbInput fullWidth placeholder="简要描述" required #description="ngModel"></textarea>
     </nb-card-body>
-    <nb-card-footer>
+    <nb-card-footer class="footer">
       <button nbButton (click)="ref.close()">取消</button>
       <button nbButton [disabled]="!dir.valid || !filename.valid || !description.valid" (click)="confim();ref.close()">确定</button>
     </nb-card-footer>

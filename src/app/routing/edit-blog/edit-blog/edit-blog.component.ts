@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef} from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { EditorInstance } from 'angular-markdown-editor';
 import { NbDialogService, NbDialogRef } from '@nebular/theme';
 import { UploadBlogService, UploadBlogReqBodyModel } from '../../../core/blog/upload-blog-service';
@@ -49,6 +49,9 @@ export class EditBlogComponent implements OnInit {
       console.log(resBody);
     });
 
+  }
+  back() {
+    window.history.go(-1)
   }
 
 }

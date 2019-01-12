@@ -28,7 +28,7 @@ export class BlogListComponent implements OnInit {
       switchMap(url => this.blogService.loadBlogList({ dir: url[1].path })),
       map(response => response.payload),
 
-    ).subscribe(val => this.bloglist = val );
+    ).subscribe(val => this.bloglist = val.reverse() );
   }
 
   // loadNext() {

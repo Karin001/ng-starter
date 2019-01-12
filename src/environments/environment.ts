@@ -8,7 +8,8 @@ export const environment = {
   restApi: {
     loadBlogList: '/api/blog/bloglist',
     loadBlogContent: '/api/blog/content',
-    uploadBlog: '/api/blog/uploadBlog'
+    uploadBlog: '/api/blog/uploadBlog',
+    editBlog: '/api/blog/edit'
   }
 };
 

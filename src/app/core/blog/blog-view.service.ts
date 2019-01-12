@@ -7,6 +7,7 @@ export interface BlogViewReqBodyModel {
 }
 export interface BlogModel {
   dir: string;
+  id?: string;
   filename: string;
   content?: string;
   created_on: Date;
@@ -19,11 +20,11 @@ export interface BlogViewResBodyModel {
 }
 //
 export interface BlogDetailReqBodyModel {
-  id:string;
+  id: string;
 }
 export interface BlogDetailResBodyModel {
-  payload:BlogModel;
-  success:boolean;
+  payload: BlogModel;
+  success: boolean;
   errorInfo: string;
 }
 @Injectable({
@@ -42,9 +43,14 @@ export class BlogViewService {
     console.log('in load blog list view', url)
     return this.http.post<BlogViewResBodyModel>(url, option);
   }
-  loadBlogContent(option: BlogDetailReqBodyModel):Observable<BlogDetailResBodyModel>{
+  loadBlogContent(option: BlogDetailReqBodyModel): Observable<BlogDetailResBodyModel> {
     const url = environment.baseUrl + environment.restApi.loadBlogContent;
     console.log('in load blog content view', url);
-    return this.http.post<BlogDetailResBodyModel>(url,option);
+    return this.http.post<BlogDetailResBodyModel>(url, option);
+  }
+  editBlogContent(option: { id: string; content: string }): Observable<BlogDetailResBodyModel> {
+    const url = environment.baseUrl + environment.restApi.editBlog;
+    console.log('edit blog content', url);
+    return this.http.post<BlogDetailResBodyModel>(url, option);
   }
 }

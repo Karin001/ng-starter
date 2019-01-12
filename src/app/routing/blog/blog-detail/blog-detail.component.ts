@@ -9,19 +9,28 @@ import { BlogViewService } from '../../../core/blog/blog-view.service';
 })
 export class BlogDetailComponent implements OnInit {
   content;
+  id;
+  editMod = false;
   constructor(
-    private route :ActivatedRoute,
+    private route: ActivatedRoute,
     private blogService: BlogViewService
   ) {
-    this.route.paramMap.subscribe(params=>{
+    this.route.paramMap.subscribe(params => {
       const id = params.get('id');
-      this.blogService.loadBlogContent({id}).subscribe(resBody => {
+      this.id = id;
+      this.blogService.loadBlogContent({ id }).subscribe(resBody => {
         this.content = resBody.payload.content;
       })
     })
-   }
-
-  ngOnInit() {
   }
 
+  ngOnInit() {
+
+  }
+  save() {
+    this.blogService.editBlogContent({id: this.id, content: this.content}).subscribe(res => {
+      console.log(res);
+
+    });
+  }
 }

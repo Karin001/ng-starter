@@ -9,6 +9,7 @@ export interface BlogModel {
   dir: string;
   id?: string;
   filename: string;
+  comments?;
   content?: string;
   created_on: Date;
   description: string;

@@ -8,6 +8,7 @@ import { NbRoleProvider } from '@nebular/security';
 import { RoleProvider } from '../role.provider';
 import { CalendarDateService } from './blog/calendarDate.service';
 import { SpinerService } from './ui/spiner.service';
+import { AddCommentService } from './blog/comment.service';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { SpinerService } from './ui/spiner.service';
     BlogViewService,
     UploadBlogService,
     CalendarDateService,
-    SpinerService
+    SpinerService,
+    AddCommentService
   ]
 })
 export class CoreModule {

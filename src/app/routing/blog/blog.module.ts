@@ -8,6 +8,7 @@ import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { HttpClient } from '@angular/common/http';
+import { CommentsModule } from '../comments/comments.module';
 
 
 
@@ -19,7 +20,7 @@ import { HttpClient } from '@angular/common/http';
     CommonModule,
     BlogRoutingModule,
     SharedModule,
-
+    CommentsModule,
 
 
     MarkdownModule.forRoot({ loader: HttpClient,

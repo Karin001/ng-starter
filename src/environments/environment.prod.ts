@@ -20,6 +20,8 @@ export const environment = {
     loadBlogList: '/api/blog/bloglist',
     loadBlogContent: '/api/blog/content',
     uploadBlog: '/api/blog/uploadBlog',
-    editBlog: '/api/blog/edit'
+    editBlog: '/api/blog/edit',
+    addComment: '/api/blog/addComment',
+    toggleHeart: '/api/blog/toggleHeart'
   }
 };

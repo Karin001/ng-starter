@@ -139,15 +139,15 @@ export class NormalComponent implements OnInit {
 
   ngOnInit() {
     console.log(window.document.body.clientWidth)
-    if (window.document.body.clientWidth < 512) {
+    if (window.document.body.clientWidth < 982) {
       console.log(123123)
       this.sidebarState = 'collapsed'
     }
     this.themeService.onMediaQueryChange().subscribe(nbBreakPoints => {
       const currentPoint = nbBreakPoints[1];
-      this.avatarOnlyPicture = currentPoint.width <= 512 ? true : false;
-      this.sidebarFixed = currentPoint.width <= 512 ? true : false;
-      if (currentPoint.width <= 512) {
+      this.avatarOnlyPicture = currentPoint.width <= 982 ? true : false;
+      this.sidebarFixed = currentPoint.width <= 982 ? true : false;
+      if (currentPoint.width <= 982) {
         this.sidebarService.collapse();
       } else {
         this.sidebarService.expand();

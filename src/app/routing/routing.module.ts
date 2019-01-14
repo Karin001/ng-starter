@@ -54,14 +54,14 @@ import { LogoutComponent } from './passport/logout/logout.component';
             endpoint: '/api/users/reset-password',
             method: 'post',
           },
-          // errors: {
-          //   key: 'errorInfo',
-          //   getter: (module: string, res: HttpErrorResponse, options: NbPasswordAuthStrategyOptions) => getDeepFromObject(
-          //     res.error,
-          //     options.errors.key,
-          //     options[module].defaultErrors,
-          //   ),
-          // }
+          errors: {
+            key: 'errorInfo',
+            getter: (module: string, res: HttpErrorResponse, options: NbPasswordAuthStrategyOptions) => getDeepFromObject(
+              res.error,
+              options.errors.key,
+              options[module].defaultErrors,
+            ),
+          }
         })
       ],
       forms: {

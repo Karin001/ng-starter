@@ -58,7 +58,7 @@ export class CommentsComponent implements OnInit {
           console.log(this.user);
 
         } else {
-          
+
         }
 
       });
@@ -88,10 +88,11 @@ export class CommentsComponent implements OnInit {
             level: this.level
           }).subscribe(res=>{
             if(res['success']){
-              this.comments = res['payload']
+              console.log(res['payload'])
+              this.comments = res['payload']['comments']
               this.nowtime = Date.now()
             }
-            
+
           });
         } else {
           this.openDlg(this.dialog)
@@ -103,7 +104,7 @@ export class CommentsComponent implements OnInit {
   }
 
   heart(main, data, sub = -1) {
-   
+
     this.authService.getToken()
       .subscribe((token: NbAuthJWTToken) => {
         if (token.isValid()) {
@@ -123,7 +124,8 @@ export class CommentsComponent implements OnInit {
             }
           }).subscribe(res=>{
             if(res['success']){
-              this.comments = res['payload'];
+              console.log(res['payload'])
+              this.comments = res['payload']['comments'];
               this.nowtime = Date.now();
             }
           });

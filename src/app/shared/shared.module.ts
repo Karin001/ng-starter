@@ -28,6 +28,8 @@ import { FormsModule } from '@angular/forms';
 import { MyUiModule } from './my-ui/my-ui.module';
 import { NbSecurityModule } from '@nebular/security';
 import { PvUvModule } from './pv-uv/pv-uv.module';
+import { PlaceholderLoadingComponent } from './placeholder-loading/placeholder-loading.component';
+import { CommonModule } from '@angular/common';
 const SHARED = [
   RouterModule,
   HttpClientModule,
@@ -58,8 +60,8 @@ const SHARED = [
   PvUvModule
 ];
 @NgModule({
-  imports: SHARED,
-  declarations: [],
-  exports: SHARED
+  imports: [...SHARED, CommonModule ],
+  declarations: [PlaceholderLoadingComponent],
+  exports: [...SHARED, PlaceholderLoadingComponent]
 })
 export class SharedModule { }

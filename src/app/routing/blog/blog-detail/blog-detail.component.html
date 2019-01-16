@@ -1,14 +1,21 @@
 
-<app-placeholder-loading nums=2></app-placeholder-loading>
-<div [hidden]="editMod" markdown [data]="content" >
 
-</div>
-<div class="tool" *nbIsGranted="['create', 'blog']" >
-  <span (click)="editMod = !editMod">{{editMod?"return":"edit"}}</span>
-  <span [hidden]="!editMod" (click)="save()"> save </span>
-</div>
-<div [hidden]="!editMod" class="edit">
-  <textarea [(ngModel)]="content"></textarea>
-</div>
- <app-comments [comments]="test" [blogId]="id"></app-comments>
+<ng-container *ngIf="!content; else elseTemplate">
+  <app-placeholder-loading nums=2></app-placeholder-loading>
+</ng-container>
+<ng-template #elseTemplate>
+  <div [hidden]="editMod" markdown [data]="content" >
+
+  </div>
+  <div class="tool" *nbIsGranted="['create', 'blog']" >
+    <button nbButton (click)="editMod = !editMod" shape="semi-round"  status="info">{{editMod?"return":"edit"}}</button>
+    <button nbButton [hidden]="!editMod" (click)="save()" (click)="editMod = !editMod" shape="semi-round"  status="info">save</button>
+  </div>
+  <div [hidden]="!editMod" class="edit">
+    <textarea [(ngModel)]="content"></textarea>
+  </div>
+</ng-template>
+
+
+ <app-comments [hidden]="editMod" [comments]="test" [blogId]="id"></app-comments>
 

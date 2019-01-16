@@ -16,15 +16,17 @@ export const animteType1 = trigger('ninjia', [
 export const animteType2 = trigger('saber', [
 
   transition('void => *', [
-    animate('0.65s cubic-bezier(0.230, 1.000, 0.320, 1.000)', keyframes([
+    animate('0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940)', keyframes([
       style({
-        transform: ' translateX(-1000px) rotate(-720deg)',
-        filter: 'blur(50px)',
-        opacity: 0
+        transform: "scale(0)",
+        'transform-origin': "100% 0%",
+        opacity: 1
       }),
-      style({transform: ' translateX(0) rotate(0)',
-      filter: 'blur(0)',
-      opacity: 1}),
+      style({
+        transform: 'scale(1)',
+        'transform-origin': '100% 0%',
+        opacity: 1
+      }),
     ]))
   ])
 ]);

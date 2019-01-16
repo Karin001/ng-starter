@@ -1,6 +1,6 @@
 <!-- Contenedor Principal -->
 <div class="comments-container">
-
+  <h3 class="comment-title">COMMNET</h3>
 
   <ul id="comments-list" class="comments-list">
     <li *ngFor="let mainComment of comments;let i = index">
@@ -12,7 +12,7 @@
           <div class="comment-head">
             <h6 class="comment-name by-author" [ngClass]="{'not-author': mainComment.main.username !== 'yukarin'}"><a href="">{{mainComment.main.username}}</a></h6>
             <span>{{getTime(mainComment.main.created_on)}}</span>
-            <i class="fa fa-reply" (click)="textare.focus(); reply(i,mainComment.main.username)"></i>
+            <i class="fa fa-reply" (click)="textarea.focus(); reply(i,mainComment.main.username)"></i>
             <i class="fa fa-heart" [ngClass]="{'red-heart': getHeart(mainComment.main.like || [''])}" (click)="heart(i,mainComment.main)"></i>
           </div>
           <div class="comment-content">
@@ -31,7 +31,7 @@
             <div class="comment-head">
               <h6 class="comment-name by-author" [ngClass]="{'not-author': subComment.username !== 'yukarin'}"><a href="http://creaticode.com/blog">{{subComment.username}}</a></h6>
               <span>hace 10 minutos</span>
-              <i class="fa fa-reply" (click)="textare.focus();reply(i,subComment.username,j)"></i>
+              <i class="fa fa-reply" (click)="textarea.focus();reply(i,subComment.username,j)"></i>
               <i class="fa fa-heart" [ngClass]="{'red-heart': getHeart(subComment.like || [''])}" (click)="heart(i,subComment,j)"></i>
             </div>
             <div class="comment-content">
@@ -46,18 +46,19 @@
   </ul>
 </div>
 
-<div class="add-comment">
+<div class="add-comment" [hidden]="!comments">
     <span class="toWho">{{toWho}}</span>
-  <textarea #textare placeholder="Comment"  [(ngModel)]="yourComment">
+  <textarea #textarea placeholder="Write Your Comment Here"  [(ngModel)]="yourComment">
 
   </textarea>
-  <button (click)=" comment();yourComment = '';">COMMENT</button>
+  <button nbButton shape="round" size="small" (click)="comment();yourComment = '';" status="success">COMMENT</button>
+
 </div>
 <ng-template #dialog let-data let-ref="dialogRef">
-  <nb-card  [style.width]="'40vw'" [style.height]="'50vh'" >
+  <nb-card  [style.width]="'40vw'" [style.height]="'50vh'" class="hintbox">
     <nb-card-header>message</nb-card-header>
     <nb-card-body class="card-body">
-      请登录
+      <h4>请登录</h4>
     </nb-card-body>
     <nb-card-footer class="footer">
       <button nbButton (click)="ref.close()">取消</button>

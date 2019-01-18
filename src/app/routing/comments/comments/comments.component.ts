@@ -89,7 +89,7 @@ export class CommentsComponent implements OnInit {
           }).subscribe(res=>{
             if(res['success']){
               console.log(res['payload'])
-              this.comments = res['payload']
+              this.comments = res['payload']['comments']
               this.nowtime = Date.now()
             }
 
@@ -125,7 +125,7 @@ export class CommentsComponent implements OnInit {
           }).subscribe(res=>{
             if(res['success']){
               console.log(res['payload'])
-              this.comments = res['payload'];
+              this.comments = res['payload']['comments'];
               this.nowtime = Date.now();
             }
           });

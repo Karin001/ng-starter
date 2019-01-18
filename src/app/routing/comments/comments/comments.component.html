@@ -29,8 +29,8 @@
           <!-- Contenedor del Comentario -->
           <div class="comment-box">
             <div class="comment-head">
-              <h6 class="comment-name by-author" [ngClass]="{'not-author': subComment.username !== 'yukarin'}"><a href="http://creaticode.com/blog">{{subComment.username}}</a></h6>
-              <span>hace 10 minutos</span>
+              <h6 class="comment-name by-author" [ngClass]="{'not-author': subComment.username !== 'yukarin'}"><a href="">{{mainComment.main.username}}</a></h6>
+            <span>{{getTime(subComment.created_on)}}</span>
               <i class="fa fa-reply" (click)="textarea.focus();reply(i,subComment.username,j)"></i>
               <i class="fa fa-heart" [ngClass]="{'red-heart': getHeart(subComment.like || [''])}" (click)="heart(i,subComment,j)"></i>
             </div>

@@ -56,11 +56,11 @@ import { LogoutComponent } from './passport/logout/logout.component';
           },
           errors: {
             key: 'errorInfo',
-            getter: (module: string, res: HttpErrorResponse, options: NbPasswordAuthStrategyOptions) => getDeepFromObject(
-              res.error,
-              options.errors.key,
-              options[module].defaultErrors,
-            ),
+            // getter: (module: string, res: HttpErrorResponse, options: NbPasswordAuthStrategyOptions) => getDeepFromObject(
+            //   res.error,
+            //   options.errors.key,
+            //   options[module].defaultErrors,
+            // ),
           }
         })
       ],
